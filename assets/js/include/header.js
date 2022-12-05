@@ -7,7 +7,7 @@ document.write('\
 				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>\
 				<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>\
 				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>\
-				<li><button onclick="myFunction()">dark mode?</button>\
+				<li><button onclick="myFunction()">light mode?</button>\
 					</li>\
 			</ul>\
 	</header>\
