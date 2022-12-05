@@ -25,7 +25,7 @@ document.write('\
 							<li>\
 								<span class="opener">Subject: Mathematics</span>\
 								<ul>\
-									<li style="color: white"><a class="TitleLink" href="#">Notes</a></li>\
+									<li style="color: white"><a class="TitleLink" href="SelectionMathMain.html">Notes</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Proofs</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
 								</ul>\
