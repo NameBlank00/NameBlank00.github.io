@@ -11,7 +11,7 @@ document.write('\
 							<input type="search" name="q" id="query" placeholder="Search" />\
 								</form>\
 \
-                			<script src="assets/js/search.js"></script>\
+                			<script src="../../assets/js/search.js"></script>\
 \
 					</section>\
 \
@@ -21,11 +21,11 @@ document.write('\
 							<h2 style="color: #ffffff">Menu</h2>\
 						</header>\
 						<ul>\
-							<li><a class="TitleLink" href="home.html">Homepage</a></li>\
+							<li><a class="TitleLink" href="../../home.html">Homepage</a></li>\
 							<li>\
 								<span class="opener">Subject: Mathematics</span>\
 								<ul>\
-									<li style="color: white"><a class="TitleLink" href="SelectionMathMain.html">Notes</a></li>\
+									<li style="color: white"><a class="TitleLink" href="../../SelectionMathMain.html">Notes</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Proofs</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
 								</ul>\
