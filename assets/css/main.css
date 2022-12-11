@@ -2275,7 +2275,8 @@ button,
   background-color: rgb(200, 16, 46);
   font-size: 0.9em;
   position: relative;
-  width: 26em; }
+  width: 26em;
+  z-index: 10000; }
   #sidebar h2 {
     font-size: 1.38889em; }
   #sidebar > .inner {
