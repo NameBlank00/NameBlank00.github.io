@@ -150,8 +150,8 @@ a.TitleLink {
       bottom: 0;
       left: 0;
       width: 100%;
-      
       border-top:5px solid #C8102E;
+      z-index: 100;
     }
     .dark-mode .navbar {
       background-color: white;
