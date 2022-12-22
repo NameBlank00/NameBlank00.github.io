@@ -1244,7 +1244,7 @@ input[type="radio"] + label:before {
   background: #4d5256;
   border-radius: 0.5em;
   border: solid 4px #960C22;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   padding: 1.5em; }
 
   .dark-mode .definition {
