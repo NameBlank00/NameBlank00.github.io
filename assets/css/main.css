@@ -1348,6 +1348,7 @@ ol {
     list-style: none;
     margin: 0 0 0 0;
     }
+    
     ol.prop  li:before {
       content: counter(elementcounter) ")";
       counter-increment: elementcounter;
