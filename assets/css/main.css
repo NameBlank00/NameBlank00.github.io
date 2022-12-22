@@ -1347,6 +1347,8 @@ ol {
   ol.prop {
     list-style: none;
     margin: 0 0 0 0;
+    }
+    ol.prop  li {
     padding-left: 1em;
     }
     ol.prop  li:before {
