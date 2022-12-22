@@ -1347,7 +1347,7 @@ ol {
   ol.prop {
     list-style: none;
     margin: 0 0 0 0;
-    padding-left: 0;
+    padding-left: 1em;
     }
     ol.prop  li:before {
       content: counter(elementcounter) ")";
