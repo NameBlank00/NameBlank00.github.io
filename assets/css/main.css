@@ -172,7 +172,7 @@ a.TitleLink {
 strong, b {
   color: white; 
   font-weight: 600; }
-  .dark-mode {
+  .dark-mode b, .dark-mode strong {
     color: #4d5256;
   } 
 
