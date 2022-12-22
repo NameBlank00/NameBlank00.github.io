@@ -1249,7 +1249,7 @@ input[type="radio"] + label:before {
 
   .dark-mode .definition {
     background: #cbd4dd;
-    border: solid 4px #c8102e }
+    border: solid 4px #c8102e; }
 
 /* Icon */
 .icon {
