@@ -1333,7 +1333,14 @@ ol {
       content: counters(elementcounter, ".") ". ";
       margin-left: 55px;
   }
-    
+  ol.prop {
+    list-style: none;
+    padding-left: 0;
+    }
+    ol.prop  li:before {
+      content: counter(elementcounter) ") ";
+      counter-increment: elementcounter;
+    }
 
 ul {
   list-style: disc;
