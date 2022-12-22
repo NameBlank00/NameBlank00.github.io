@@ -1240,6 +1240,17 @@ input[type="radio"] + label:before {
     border-radius: 0;
     padding: 0; }
 
+.definition {
+  background: #4d5256;
+  border-radius: 0.5em;
+  border: solid 4px #960C22;
+  margin-bottom: 2em;
+  padding: 1.5em; }
+
+  .dark-mode .definition {
+    background: #cbd4dd;
+    border: solid 4px #c8102e }
+
 /* Icon */
 .icon {
   text-decoration: none;
