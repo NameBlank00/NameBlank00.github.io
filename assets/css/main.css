@@ -1335,6 +1335,7 @@ ol {
   }
   ol.prop {
     list-style: none;
+    margin: 0 0 0 0;
     padding-left: 0;
     }
     ol.prop  li:before {
