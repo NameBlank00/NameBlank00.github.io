@@ -64,6 +64,12 @@ input, select, textarea {
   -ms-appearance: none;
   appearance: none; }
 
+
+#myDIV1, #myDIV2,#myDIV3, #myDIV4,#myDIV5, #myDIV6,#myDIV7, #myDIV8{
+  display: block;
+}
+
+
 /* Basic */
 @-ms-viewport {
   width: device-width; }
