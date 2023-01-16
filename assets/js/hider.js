@@ -84,13 +84,3 @@ function hider8() {
       x.style.display = "none";
     }
 }
-
-window.onload = function() {
-  for(var i=1; i<10; i++ ){
-  document.getElementById('btn' + i).click();
-  }
-
-var scriptTag = document.createElement("script");
-scriptTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
-document.getElementsByTagName("head")[0].appendChild(scriptTag);
-}
