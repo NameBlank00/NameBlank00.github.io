@@ -25,7 +25,7 @@ document.write('\
 							<li>\
 								<span class="opener">Subject: Mathematics</span>\
 								<ul>\
-									<li style="color: white"><a class="TitleLink" href="https://nameblank00.github.io/SelectionMathMain.html">Notes</a></li>\
+									<li style="color: white"><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Notes</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Proofs</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
 								</ul>\
@@ -33,7 +33,7 @@ document.write('\
 							<li>\
 								<span class="opener">Subject: Physics</span>\
 								<ul>\
-									<li style="color: white"><a class="TitleLink" href="#">Notes</a></li>\
+									<li style="color: white"><a class="TitleLink" href="https://nameblank00.github.io/Physics/Physics_Content.html">Notes</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Experiments</a></li>\
 									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
 								</ul>\
