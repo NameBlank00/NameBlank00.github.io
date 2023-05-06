@@ -4,8 +4,41 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+
 <html>
 	<head>
+
+		<style>
+			button.toggle1 {
+				border: 3px solid #000000;
+				background: #fff;
+				padding: 7px 15px;
+				margin-right: 10px;
+			}
+			
+			#link-box {
+			  width: 150px;
+			  height: 200px;
+			  display: none;
+			  float: right;
+			  border: 3px solid #000000;
+			}
+			
+			.toggle1:focus~#link-box {
+			 display: block;
+			}
+			
+			#link-box > ul > li {
+			 list-style: none;
+			 padding: 10px;
+			}
+			
+			#link-box > ul > li > a {
+			 text-decoration: none;
+			 color: #000000;
+			}</style>
+
 		<title>Topological Spaces</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -27,38 +60,8 @@
 
 						<div class="navbar container">
 
-							<style>
-							button.toggle {
-								border: 3px solid #000000;
-								background: #fff;
-								padding: 7px 15px;
-								margin-right: 10px;
-							}
-							
-							#link-box {
-							  width: 150px;
-							  height: 200px;
-							  display: none;
-							  float: right;
-							  border: 3px solid #000000;
-							}
-							
-							.toggle:focus~#link-box {
-							 display: block;
-							}
-							
-							#link-box > ul > li {
-							 list-style: none;
-							 padding: 10px;
-							}
-							
-							#link-box > ul > li > a {
-							 text-decoration: none;
-							 color: #000000;
-							}</style>
-
 							<a class="button" href="#home" > Prev. Section</a>
-							<button class="toggle"><span class="label">Table of Contents</span> <i class="icon solid fa-list-ul fa-2x"></i></button>
+							<button class="toggle1"><span class="label">Table of Contents</span> <i class="icon solid fa-list-ul fa-2x"></i></button>
 								<div id="link-box">
 									<ul>
 								  	<li><a href="#">Link 1</a></li>
