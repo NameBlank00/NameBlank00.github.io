@@ -30,58 +30,11 @@
 
 						<div class="navbar container">
 
-							<style>.dropdown-menu {
-								display: none;
-      							background-color: #094804;
-								width: 10%;
-								height: 300px;
-								position: absolute;
-      							z-index: 99999 !important;
-							  }
-
-							  #mySection {
-								width: 150px;
-  								height: 200px;
-								vertical-align: top;
-  								border: 3px solid #000000;
-							  }
-
-							  
-								#mySection > ul > li {
-								 list-style: none;
-								 padding: 10px;
-										}
-
-								#mySection > ul > li > a {
-								 text-decoration: none;
-								 color: #000000;
-									}
-
-							  .show {
-  								display: block;
-							  }
-							</style>
-
-							<script>
-							document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', e => {
-      let id = e.target.dataset.dropdown
-      document.querySelectorAll('.dropdown-menu').forEach(el => el.id === id ? el.classList.toggle('show') : el.classList.remove("show"));
-    })
-  })
-})</script>
+							
 
 							<a class="button" href="#home" > Prev. Section</a>
-							<button data-dropdown="mySection"> <i class="icon solid fa-list-ul fa-2x"></i></button>
-								<div class="dropdown-menu" id="mySection">
-									<ul>
-								  	<li><a href="#">Link 1</a></li>
-								  	<li><a href="#">Link 2</a></li>
-								  	<li><a href="#">Link 3</a></li>
-								  	<li><a href="#">Link 4</a></li>
-								</ul>
-								</div>
+							<a href="https://nameblank00.github.io/quick_notes/point-set_topology/Point-Set_Topology_TableOfContents.html" class="icon solid fa-list-ul fa-2x"> </a>
+					
 							<a class="button" href="#contact"> Next Section</a>
 
 
