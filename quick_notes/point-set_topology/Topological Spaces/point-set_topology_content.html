@@ -49,7 +49,7 @@
 
 							<script>
 							document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('nav button').forEach(button => {
+  document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', e => {
       let id = e.target.dataset.dropdown
       document.querySelectorAll('.dropdown-menu').forEach(el => el.id === id ? el.classList.toggle('show') : el.classList.remove("show"));
