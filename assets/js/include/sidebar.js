@@ -38,6 +38,14 @@ document.write('\
 									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
 								</ul>\
 							</li>\
+							<li>\
+								<span class="opener">Subject: Computer Science</span>\
+								<ul>\
+									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
+									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
+									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
+								</ul>\
+							</li>\
 							<li><a class="TitleLink" href="#">Personal Blog</a></li>\
 							<li><a class="TitleLink" href="#">About Me</a></li>\
 						</ul>\
