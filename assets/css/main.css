@@ -2640,8 +2640,3 @@ button,
 
 
 
-
-
-.my_scroll_div{
-       overflow-y: auto !important;
-       max-height: 100px !important; }
