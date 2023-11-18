@@ -1,13 +1,5 @@
 document.write('\
 \
-<!-- Header -->\
-<header id="header">\
-	<ul class="icons">\
-		<li> <button id="DarkModeButton">Light Mode</button>\
-			</li>\
-	</ul>\
-</header>\
-\
 <script>\
 	document.getElementById("DarkModeButton").addEventListener("click", function (e) {\
 	document.body.classList.toggle("dark-mode");\
@@ -19,5 +11,13 @@ document.write('\
 	}\
 	});\
 </script>\
+<!-- Header -->\
+<header id="header">\
+	<ul class="icons">\
+		<li> <button id="DarkModeButton">Light Mode</button>\
+			</li>\
+	</ul>\
+</header>\
+\
 \
 ');
