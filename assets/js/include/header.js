@@ -1,6 +1,7 @@
 document.write('\
 \
 <script>\
+	var element = document.body;\
 	document.getElementById("DarkModeButton").addEventListener("click", function (e) {\
 	document.body.classList.toggle("dark-mode");\
 	// element.classList.toggle("dark-mode");\
@@ -10,6 +11,7 @@ document.write('\
 		e.target.textContent = "Light Mode";\
 	}\
 	});\
+};\
 </script>\
 <!-- Header -->\
 <header id="header">\
