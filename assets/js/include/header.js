@@ -10,7 +10,7 @@ document.write('\
 \
 <script>\
 	document.getElementById("DarkModeButton").addEventListener("click", function (e) {\
-	document.body.classList.toggle('dark-mode');\
+	document.body.classList.toggle("dark-mode");\
 	// element.classList.toggle("dark-mode");\
 	if (e.target.textContent === "Light Mode") {\
 		e.target.textContent = "Dark Mode";\
