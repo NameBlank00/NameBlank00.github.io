@@ -4,7 +4,7 @@ document.write('\
 <header id="header">\
 	<ul class="icons">\
 		<li> <button id="DarkModeButton">Light Mode</button>\
-			</li>\	
+			</li>\
 	</ul>\
 </header>\
 \
