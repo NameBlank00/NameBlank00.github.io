@@ -3,7 +3,7 @@ document.write('\
 <!-- Header -->\
 	<header id="header">\
 			<ul class="icons">\
-				<li><button onclick="myFunction()">light mode?</button>\
+				<li><button onclick="myFunction()">Light/Dark Mode</button>\
 					</li>\
 			</ul>\
 	</header>\
