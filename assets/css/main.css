@@ -24,7 +24,7 @@ section, summary, time, mark, audio, video {
   vertical-align: baseline; }
 
 body {
-  padding-bottom: 0;
+  padding-bottom: 50px;
 }  
 
 article, aside, details, figcaption, figure,
