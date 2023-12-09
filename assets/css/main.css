@@ -2297,6 +2297,7 @@ button,
   font-size: 0.9em;
   position: relative;
   width: 26em;
+  margin-bottom:-50px;
   z-index: 10000; }
   #sidebar h2 {
     font-size: 1.38889em; }
