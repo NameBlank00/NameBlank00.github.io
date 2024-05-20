@@ -46,7 +46,7 @@ document.write('\
 									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
 								</ul>\
 							</li>\
-							<li><a class="TitleLink" href="#">Personal Blog</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/Textbooks.html">Textbooks</a></li>\
 							<li><a class="TitleLink" href="#">About Me</a></li>\
 						</ul>\
 					</nav>\
