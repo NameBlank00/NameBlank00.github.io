@@ -1158,6 +1158,7 @@ input[type="radio"] {
   z-index: -1; }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
+    zoom: 0.8;
     text-decoration: none;
     color: #fff9d9;
     cursor: pointer;
