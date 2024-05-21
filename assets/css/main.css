@@ -1146,6 +1146,7 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
+  zoom: 0.8;
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -1158,7 +1159,6 @@ input[type="radio"] {
   z-index: -1; }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
-    zoom: 0.8;
     text-decoration: none;
     color: #fff9d9;
     cursor: pointer;
