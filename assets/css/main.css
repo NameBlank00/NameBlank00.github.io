@@ -2682,16 +2682,12 @@ button,
   
   
 
-.filter input[type="checkbox"] + label.btn {
-  padding-left: 0;
-  padding-right: 0;
-}
 
-.filter input[type="checkbox"]:checked + label.btn {
+.filter input.ft[type="checkbox"]:checked + label.btn {
     color: yellow ;
     border-bottom:3px solid red;
   }
   
-.filter input[type="checkbox"]:checked + label.btn:before, .filter input:checked + label.btn:after {
+.filter input.ft[type="checkbox"]:checked + label.btn:before, .filter input:checked + label.btn:after {
       border:3.25px solid red;
   }
