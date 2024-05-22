@@ -2674,6 +2674,7 @@ button,
       z-index:-1;
       border:3.25px solid red;
       border-radius: 5px;
+      box-sizing: none;
   }
 .btn:after {
       left:100%;
@@ -2689,6 +2690,7 @@ button,
       z-index:-1;
       border:3.25px solid red;
       border-radius: 5px;
+      box-sizing: none;
   }
   
   
