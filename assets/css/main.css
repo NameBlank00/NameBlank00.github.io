@@ -2706,6 +2706,4 @@ button,
   
 .filter input.ft[type="checkbox"]:checked + label.btn:before, .filter input:checked + label.btn:after {
       border:3.25px solid red;
-      content:'';
-      display:block;
   }
