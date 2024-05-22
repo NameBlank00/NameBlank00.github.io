@@ -2646,7 +2646,7 @@ button,
 
 
 
-    .btn {
+.btn {
       display: inline-block;
       position: relative;
       line-height: 1.2em;
@@ -2659,7 +2659,7 @@ button,
       border-bottom:3px solid red;
     color: red;
   }
-  .btn:before, .btn:after {
+.btn:before, .btn:after {
       content:'';
       position: absolute;
       top:-3px; /* magic number = border width */
@@ -2671,21 +2671,21 @@ button,
       border:3.25px solid red;
       border-radius: 5px;
   }
-  .btn:before {
+.btn:before {
       right:100%;
       transform: translateX(52%) rotate(45deg) scale(0.751);
   }
-  .btn:after {
+.btn:after {
       left:100%;
       transform: translateX(-52%)rotate(45deg) scale(0.751);
   }
   
   
-  .filter input:checked + label.btn {
+.filter input:checked + label.btn {
     color: yellow ;
     border-bottom:3px solid red;
   }
   
-  .filter input:checked + label.btn:before, .filter input:checked + label.btn:after {
+.filter input:checked + label.btn:before, .filter input:checked + label.btn:after {
       border:3.25px solid red;
   }
