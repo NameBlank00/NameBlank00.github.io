@@ -2681,6 +2681,12 @@ button,
   }
   
   
+
+.filter input[type="checkbox"] + label.btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .filter input[type="checkbox"]:checked + label.btn {
     color: yellow ;
     border-bottom:3px solid red;
