@@ -2727,7 +2727,7 @@ button,
       box-sizing: content-box;
 }
 
-.filter input[type="checkbox"] + label {
+.filter input.ft[type="checkbox"] + label{
   text-decoration: none;
   color: #fff9d9;
   cursor: pointer;
