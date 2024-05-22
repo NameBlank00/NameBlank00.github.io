@@ -2662,8 +2662,9 @@ button,
 
 .btn:before {
       right:100%;
-      transform: translateX(52%) rotate(45deg) scale(0.751);
+      transform: translateX(-100%) rotate(45deg) scale(0.751);
       content:'';
+      display:block;
       position: absolute;
       top:-3px; /* magic number = border width */
       width: 1.2em;
@@ -2678,6 +2679,7 @@ button,
       left:100%;
       transform: translateX(-52%)rotate(45deg) scale(0.751);
       content:'';
+      display:block;
       position: absolute;
       top:-3px; /* magic number = border width */
       width: 1.2em;
