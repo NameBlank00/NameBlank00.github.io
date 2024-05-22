@@ -2651,7 +2651,7 @@ button,
       position: relative;
       line-height: 1.2em;
       padding: 0;
-      padding-left: 10px;
+      margin-left: 10px;
       background: black;
       margin: 2em;
       /* just spacing */
