@@ -2659,7 +2659,10 @@ button,
       border-bottom:3px solid red;
     color: red;
   }
-.btn:before, .btn:after {
+
+.btn:before {
+      right:100%;
+      transform: translateX(52%) rotate(45deg) scale(0.751);
       content:'';
       position: absolute;
       top:-3px; /* magic number = border width */
@@ -2671,13 +2674,19 @@ button,
       border:3.25px solid red;
       border-radius: 5px;
   }
-.btn:before {
-      right:100%;
-      transform: translateX(52%) rotate(45deg) scale(0.751);
-  }
 .btn:after {
       left:100%;
       transform: translateX(-52%)rotate(45deg) scale(0.751);
+      content:'';
+      position: absolute;
+      top:-3px; /* magic number = border width */
+      width: 1.2em;
+      height: 1.2em;
+      background: inherit;
+      transform-origin:center;
+      z-index:-1;
+      border:3.25px solid red;
+      border-radius: 5px;
   }
   
   
