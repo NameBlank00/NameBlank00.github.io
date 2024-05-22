@@ -1187,13 +1187,13 @@ input[type="radio"] {
       content: '';
       display: inline-block;
       font-size: 0.8em;
-      height: 2.0625em;
+      height: 1.75em;
       left: 0;
-      line-height: 2.0625em;
+      line-height: 1.75em;
       position: absolute;
       text-align: center;
       top: 0;
-      width: 2.0625em; }
+      width: 1.75em; }
   input[type="checkbox"]:checked + label:before,
   input[type="radio"]:checked + label:before {
     background: #3d4449;
