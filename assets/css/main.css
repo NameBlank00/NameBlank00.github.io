@@ -2663,7 +2663,7 @@ button,
 
 .btn:before {
       right:100%;
-      transform: translateX(-100%) rotate(45deg) scale(0.751);
+      transform: translateX(-52%) rotate(45deg) scale(0.751);
       content:'';
       display:block;
       position: absolute;
@@ -2725,4 +2725,16 @@ button,
       border:3.25px solid red;
       border-radius: 5px;
       box-sizing: content-box;
+}
+
+.filter input[type="checkbox"] + label {
+  text-decoration: none;
+  color: #fff9d9;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 400;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  position: relative
 }
