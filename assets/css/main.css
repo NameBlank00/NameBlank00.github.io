@@ -2681,11 +2681,11 @@ button,
   }
   
   
-.filter input:checked + label.btn {
+.filter input[type="checkbox"]:checked + label.btn {
     color: yellow ;
     border-bottom:3px solid red;
   }
   
-.filter input:checked + label.btn:before, .filter input:checked + label.btn:after {
+.filter input[type="checkbox"]:checked + label.btn:before, .filter input:checked + label.btn:after {
       border:3.25px solid red;
   }
