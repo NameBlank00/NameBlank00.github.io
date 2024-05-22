@@ -2674,7 +2674,7 @@ button,
       z-index:-1;
       border:3.25px solid red;
       border-radius: 5px;
-      box-sizing: none;
+      box-sizing: content-box;
   }
 .btn:after {
       left:100%;
@@ -2690,7 +2690,7 @@ button,
       z-index:-1;
       border:3.25px solid red;
       border-radius: 5px;
-      box-sizing: none;
+      box-sizing: content-box;
   }
   
   
@@ -2700,7 +2700,6 @@ button,
     color: yellow ;
     border-bottom:3px solid red;
     content:'';
-      display:block;
       background: red;
   }
   
