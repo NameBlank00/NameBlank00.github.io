@@ -2701,7 +2701,7 @@ button,
     color: yellow ;
     border-bottom:3px solid red;
     content:'';
-      background: red;
+    background: #c8102e;
   }
   
 .filter input.ft[type="checkbox"]:checked + label.btn:before, .filter input.ft[type="checkbox"]:checked + label.btn:after {
