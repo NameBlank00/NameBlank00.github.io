@@ -2707,3 +2707,26 @@ button,
 .filter input.ft[type="checkbox"]:checked + label.btn:before, .filter input.ft[type="checkbox"]:checked + label.btn:after {
       border:3.25px solid red;
   }
+
+.filter input[type="checkbox"]:checked + label:before{
+  content: '';
+  background: #c8102e;
+}
+
+.filter input[type="checkbox"] + label:before{
+  content: '';
+  background: black;
+  border:3.25px solid red;
+  font-size: 16px;
+  display:block;
+  position: absolute;
+      top:-3px; /* magic number = border width */
+      width: 1.2em;
+      height: 1.2em;
+      background: inherit;
+      transform-origin:center;
+      z-index:-1;
+      border:3.25px solid red;
+      border-radius: 5px;
+      box-sizing: content-box;
+}
