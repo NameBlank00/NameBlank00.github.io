@@ -2713,7 +2713,7 @@ button,
   content: '';
   background: black;
   border:3.25px solid red;
-  font-size: 16px;
+  font-size: 13px;
   display:block;
   position: absolute;
       top:-3px; /* magic number = border width */
