@@ -2656,8 +2656,8 @@ button,
       margin: 2em;
       /* just spacing */
       position: relative;
-      border-top:3px solid red;
-      border-bottom:3px solid red;
+      border-top:3px solid #960C22;
+      border-bottom:3px solid #960C22;
     color: red;
   }
 
@@ -2673,7 +2673,7 @@ button,
       background: inherit;
       transform-origin:center;
       z-index:-1;
-      border:3.25px solid red;
+      border:3.25px solid #960C22;
       border-radius: 5px;
       box-sizing: content-box;
   }
@@ -2689,7 +2689,7 @@ button,
       background: inherit;
       transform-origin:center;
       z-index:-1;
-      border:3.25px solid red;
+      border:3.25px solid #960C22;
       border-radius: 5px;
       box-sizing: content-box;
       font-size: 12px;
@@ -2713,7 +2713,7 @@ button,
 .filter input[type="checkbox"] + label:before{
   content: '';
   background: black;
-  border:3.25px solid red;
+  border:3.25px solid #960C22;
   font-size: 12px;
   display:block;
   position: absolute;
@@ -2723,7 +2723,7 @@ button,
       background: inherit;
       transform-origin:center;
       z-index:-1;
-      border:3.25px solid red;
+      border:3.25px solid #960C22;
       border-radius: 5px;
       box-sizing: content-box;
 }
