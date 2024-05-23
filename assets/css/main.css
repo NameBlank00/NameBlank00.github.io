@@ -2737,5 +2737,6 @@ button,
   font-weight: 400;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  position: relative
+  position: relative;
+  padding-bottom: 1.3px;
 }
