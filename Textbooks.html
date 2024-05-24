@@ -75,7 +75,7 @@
 										<hr>
 
 
-										<div>
+										<div class="Book CM">
 
 
 											<div class="filter">
@@ -103,7 +103,7 @@
 
 										
 
-										<div class="filterDiv colors">
+										<div class="Book QM">
 
 
 											<div class="filter">
@@ -173,7 +173,22 @@
 
 
 					<script>
-						
+						document.querySelector(document).ready(function() {
+  
+						document.querySelector('input[type="checkbox"]').addEventListener("click", function(function() {
+							
+							document.querySelector(".Book").style.display = "none"; //hide all checkboxes
+							//loop through checked checkboxs
+							document.querySelector('input[type="checkbox"]:checked').forEach(function() {
+							
+							var inputValue = document.querySelector(this).getAttribute("value");
+							document.querySelector("." + inputValue).style.display = "block";; //show them
+							}
+							)
+						}
+						);
+						}
+						);
 
 					</script>
 
