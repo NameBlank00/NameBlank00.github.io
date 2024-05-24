@@ -2739,3 +2739,12 @@ button,
   padding-right: 0.5em;
   position: relative;
 }
+
+
+summary{
+  color: #FFFFFF;
+}
+
+.dark-mode summary{
+  color: #000000;
+}
