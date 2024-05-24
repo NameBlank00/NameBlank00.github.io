@@ -182,18 +182,18 @@
 						var selector = stateSelector ;
 
 						if (selector) {
-							$(".book").hide();
-							$(stateSelector).show();
+							document.querySelector(".book").hide();
+							document.querySelector(stateSelector).show();
 							//console.log(stateSelector + genderSelector);
 						} else {
-							$(".book").show();
+							document.querySelector(".book").show();
 						}
 						};
 
 
 
-						$(".checkbox input").change(function() {
-						if ($(this).is(":checked")) {
+						document.querySelector(".checkbox input").change(function() {
+						if (document.querySelector(this).is(":checked")) {
 							stateSelector = stateSelector + "." + this.id;
 						} else {
 							stateSelector = stateSelector.replace("." + this.id, "");
