@@ -42,8 +42,8 @@
 													<ul style="list-style-position: inside">
 														<details open id="sectiontags">
 														<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> Logic </summary>
-															<li style="padding-left:1em"> <a onclick="filterSelection('cars')">  Logic </a> </li> <br>
-															<li style="padding-left:1em"> <a onclick="filterSelection('colors')">  Logic </a> </li> <br>
+															<li style="padding-left:1em"> <a href="#div_logic">  Logic </a> </li> <br>
+															<li style="padding-left:1em"> <a href="#div_id">  Logic </a> </li> <br>
 														</details>
 														</ul>
 													</details>
@@ -75,7 +75,7 @@
 										<hr>
 
 
-										<div class="filterDiv cars">
+										<div class="div_logic">
 
 
 											<div class="filter">
@@ -96,6 +96,7 @@
 
 
 											</div>
+											<hr>
 
 										</div>
 
@@ -123,10 +124,10 @@
 
 
 											</div>
+											<hr>
 
 										</div>
 
-										<hr>
 
 									</section>
 
@@ -173,37 +174,6 @@
 
 					<script>
 						
-						filterSelection("all")
-						function filterSelection(c) {
-						var x, i;
-						x = document.getElementsByClassName("filterDiv");
-						if (c == "all") c = "";
-						for (i = 0; i < x.length; i++) {
-							w3RemoveClass(x[i], "show");
-							if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-						}
-						}
-
-						function w3AddClass(element, name) {
-						var i, arr1, arr2;
-						arr1 = element.className.split(" ");
-						arr2 = name.split(" ");
-						for (i = 0; i < arr2.length; i++) {
-							if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-						}
-						}
-
-						function w3RemoveClass(element, name) {
-						var i, arr1, arr2;
-						arr1 = element.className.split(" ");
-						arr2 = name.split(" ");
-						for (i = 0; i < arr2.length; i++) {
-							while (arr1.indexOf(arr2[i]) > -1) {
-							arr1.splice(arr1.indexOf(arr2[i]), 1);     
-							}
-						}
-						element.className = arr1.join(" ");
-						}
 
 					</script>
 
