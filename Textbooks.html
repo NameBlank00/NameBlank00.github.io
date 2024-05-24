@@ -63,6 +63,8 @@
 											<hr style="border: none; border-bottom: 5px solid red;margin-bottom:0;">
 											<h2 style="font-size: 2.5em;text-align:center;margin-bottom:0;"> Mathematics</h2>
 											<hr style="border: none; border-bottom: 5px solid red;margin-top:0;">
+										
+										<div id="Books">
 
 										<div id="div_logic">
 											
@@ -71,11 +73,10 @@
 										
 										
 										</div>
-										</div>
 										<hr>
 
 
-										<div class="Book CM">
+										<div class=" book CM">
 
 
 											<div class="filter">
@@ -103,7 +104,7 @@
 
 										
 
-										<div class="Book QM">
+										<div class="book QM">
 
 
 											<div class="filter">
@@ -127,6 +128,8 @@
 											<hr>
 
 										</div>
+									</div>
+									</div>
 
 
 									</section>
@@ -150,12 +153,12 @@
 					<details open style="letter-spacing: 0.075em">\
 					<summary style="border-bottom:solid 1px rgba(210, 215, 217, 0.75);color:#ffffff;letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> Mathematics </summary>\
 					<ul>\
-						<details open>\
+						<details class="checkbox" open>\
 						<summary style="letter-spacing: 0.075em; text-transform: uppercase;"> Logic </summary>\
 							<input type="checkbox" id="CM" name="CM"> <label for="CM" style="font-size:8pt"> Classical Mechanics</label> <br>\
 							<input type="checkbox" id="QM" name="QM"> <label for="QM" style="font-size:8pt"> Quantum Mechanics </label> <br>\
 						</details>\
-						<details>\
+						<details class="checkbox">\
 							<input type="checkbox" id="CM" name="CM"> <label for="CM" style="font-size:8pt"> Classical Mechanics</label> <br>\
 							<input type="checkbox" id="QM" name="QM"> <label for="QM" style="font-size:8pt"> Quantum Mechanics </label> <br>\
 						</details>\
@@ -173,23 +176,30 @@
 
 
 					<script>
-						document.querySelector(document).ready(function() {
-  
-						document.querySelector('input[type="checkbox"]').addEventListener("click", function(function() {
-							
-							document.querySelector(".Book").style.display = "none"; //hide all checkboxes
-							//loop through checked checkboxs
-							document.querySelector('input[type="checkbox"]:checked').forEach(function() {
-							
-							var inputValue = document.querySelector(this).getAttribute("value");
-							document.querySelector("." + inputValue).style.display = "block";; //show them
-							}
-							)
-						}
-						);
-						}
-						);
+						var stateSelector = "";
 
+						var filter = function() {
+						var selector = stateSelector ;
+
+						if (selector) {
+							$(".book").hide();
+							$(stateSelector).show();
+							//console.log(stateSelector + genderSelector);
+						} else {
+							$(".book").show();
+						}
+						};
+
+
+
+						$(".checkbox input").change(function() {
+						if ($(this).is(":checked")) {
+							stateSelector = stateSelector + "." + this.id;
+						} else {
+							stateSelector = stateSelector.replace("." + this.id, "");
+						}
+						filter();
+						});
 					</script>
 
 			
@@ -201,6 +211,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 	</body>
