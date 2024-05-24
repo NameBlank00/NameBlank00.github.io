@@ -182,11 +182,11 @@
 						var selector = stateSelector ;
 
 						if (selector) {
-							document.getElementById('book').style.display=='none';
+							document.getElementByClassName('book').style.display=='none';
 							document.querySelector(stateSelector).show();
 							//console.log(stateSelector + genderSelector);
 						} else {
-							document.getElementById('book').style.display=='block';
+							document.getElementByClassName('book').style.display=='block';
 						}
 						};
 
