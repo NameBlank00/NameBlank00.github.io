@@ -77,8 +77,8 @@
 										</div>
 										<hr>
 
-
-										<div class=" book CM">
+										<div class="book">
+										<div class="CM">
 
 
 											<div class="filter">
@@ -102,11 +102,12 @@
 											<hr>
 
 										</div>
+										</div>
 
 
 										
-
-										<div class="book QM">
+										<div class="book">
+										<div class="QM">
 
 
 											<div class="filter">
@@ -129,6 +130,7 @@
 											</div>
 											<hr>
 
+										</div>
 										</div>
 									</div>
 									</div>
@@ -178,32 +180,26 @@
 
 
 					<script type="text/javascript">
-						$(document).ready(function() {
-						var stateSelector = "";
-
-						var filter = function() {
-						var selector = stateSelector ;
-
-						if (selector) {
-							$(".book").hide();
-							$(stateSelector).show();
-							//console.log(stateSelector + genderSelector);
-						} else {
-							$(".book").show();
-						}
-						};
-
-
-
-						$(".checkbox input").change(function() {
-						if ($(this).is(":checked")) {
-							stateSelector = stateSelector + "." + this.id;
-						} else {
-							stateSelector = stateSelector.replace("." + this.id, "");
-						}
-						filter();
+						function change() {
+						let results = Array.from(document.querySelectorAll('.book > div'));
+						// Hide all results
+						results.forEach(function(result) {
+							result.style.display = 'none';
 						});
+						// Filter results to only those that meet ALL requirements:
+						Array.from(document.querySelectorAll('.checkbox input[id]:checked'), function(input) {
+							const attrib = input.getAttribute('id');
+
+							results = results.filter(function(result) {
+							return result.classList.contains(attrib);
+							});
 						});
+						// Show those filtered results:
+						results.forEach(function(result) {
+							result.style.display = 'block';
+						});
+						}
+						change();
 					</script>
 
 			
