@@ -155,8 +155,8 @@
 					<ul>\
 						<details open>\
 						<summary class="checkbox" style="letter-spacing: 0.075em; text-transform: uppercase;"> Logic </summary>\
-							<input type="checkbox" id="CM" name="CM"> <label for="CM" style="font-size:8pt"> Classical Mechanics</label> <br>\
-							<input type="checkbox" id="QM" name="QM"> <label for="QM" style="font-size:8pt"> Quantum Mechanics </label> <br>\
+						<label style="font-size:8pt"> <input type="checkbox" id="CM" > Classical Mechanics</label> <br>\
+						<label style="font-size:8pt"> <input type="checkbox" id="QM" > Quantum Mechanics </label> <br>\
 						</details>\
 						<details>\
 							<input type="checkbox" id="CM2" name="CM2"> <label for="CM2" style="font-size:8pt"> Classical Mechanics</label> <br>\
@@ -176,30 +176,32 @@
 
 
 					<script>
+						
 						var stateSelector = "";
 
 						var filter = function() {
 						var selector = stateSelector ;
 
 						if (selector) {
-							document.getElementByClassName('book').style.display=='none';
-							document.querySelector(stateSelector).show();
+							$(".book").hide();
+							$(stateSelector).show();
 							//console.log(stateSelector + genderSelector);
 						} else {
-							document.getElementByClassName('book').style.display=='block';
+							$(".book").show();
 						}
 						};
 
 
 
-						document.querySelector(".checkbox input").change(function() {
-						if (document.querySelector(".checkbox input").is(":checked")) {
+						$(".checkbox label input").change(function() {
+						if ($(this).is(":checked")) {
 							stateSelector = stateSelector + "." + this.id;
 						} else {
 							stateSelector = stateSelector.replace("." + this.id, "");
 						}
 						filter();
 						});
+
 					</script>
 
 			
