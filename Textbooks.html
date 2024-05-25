@@ -155,8 +155,8 @@
 					<ul>\
 						<details open>\
 						<summary class="checkbox" style="letter-spacing: 0.075em; text-transform: uppercase;"> Logic </summary>\
-						<label style="font-size:8pt"> <input type="checkbox" id="CM" > Classical Mechanics</label> <br>\
-						<label style="font-size:8pt"> <input type="checkbox" id="QM" > Quantum Mechanics </label> <br>\
+						<input type="checkbox" id="CM" > <label style="font-size:8pt"> Classical Mechanics </label> <br>\
+						<input type="checkbox" id="QM" > <label style="font-size:8pt"> Quantum Mechanics </label> <br>\
 						</details>\
 						<details>\
 							<input type="checkbox" id="CM2" name="CM2"> <label for="CM2" style="font-size:8pt"> Classical Mechanics</label> <br>\
@@ -193,7 +193,7 @@
 
 
 
-						$(".checkbox label input").change(function() {
+						$(".checkbox input").change(function() {
 						if ($(this).is(":checked")) {
 							stateSelector = stateSelector + "." + this.id;
 						} else {
