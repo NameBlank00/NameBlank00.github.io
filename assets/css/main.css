@@ -2649,7 +2649,7 @@ button,
 .btn {
       display: inline-block;
       position: relative;
-      line-height: 1.2em;
+      line-height: 1.1em;
       padding: 0;
       margin-left: 10px;
       background: #c8102e;
@@ -2658,7 +2658,8 @@ button,
       position: relative;
       border-top:3px solid #960C22;
       border-bottom:3px solid #960C22;
-    color: #fff9d9;
+      padding-bottom: 1.5px;
+      color: #fff9d9;
   }
 
 .btn:before {
