@@ -166,7 +166,7 @@
 												<div class="QFT">
 
 													<div class="filter">
-														<label class="btn" >Cag</label>
+														<div> <label id="CF" class="btn" >Cag</label> </div>
 														
 														<input type="checkbox" class="ft" id="checkbox-btn-1" name="checkbox-btns" style="display: none;">
 														<label for="checkbox-btn-1" class="btn" >Cag</label>
@@ -245,7 +245,7 @@
 										<summary style="letter-spacing: 0.075em; text-transform: uppercase;"> Logic </summary>
 										<div class="checkbox">
 											<input type="checkbox" id="CM" name="CM" onchange="change()"> <label style="font-size:8pt" for="CM"> Classical Mechanics </label> <br>
-											<input type="checkbox" id="QM" name="QM" onchange="change()"> <label style="font-size:8pt" for="QM"> Quantum Mechanics </label> <br>
+											<input type="checkbox" id="CF" name="CF" onchange="change()"> <label style="font-size:8pt" for="QM"> Quantum Mechanics </label> <br>
 										</div>
 									</details>
 
@@ -296,6 +296,9 @@
 				results.forEach(function(result) {
 					result.style.display = 'block';
 				});
+
+
+
 				}
 				change();
 				//document.addEventListener("DOMContentLoaded", function(){});
