@@ -1,10 +1,6 @@
 
 document.write('\
 \
-	<!-- Sidebar -->\
-		<div id="sidebar">\
-			<div class="inner">\
-\
 				<!-- Search -->\
 					<section id="search" class="alt">\
 						<form role="search" id="form">\
@@ -66,8 +62,5 @@ document.write('\
 					<footer id="footer">\
 						<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>\
 					</footer>\
-\
-			</div>\
-		</div>\
 \
 ');
