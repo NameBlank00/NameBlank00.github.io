@@ -2652,13 +2652,13 @@ button,
       line-height: 1.35em;
       padding: 0;
       margin-left: 10px;
-      background: black;
+      background: #c8102e;
       margin: 2em;
       /* just spacing */
       position: relative;
       border-top:3px solid #960C22;
       border-bottom:3px solid #960C22;
-    color: red;
+    color: #fff9d9;
   }
 
 .btn:before {
