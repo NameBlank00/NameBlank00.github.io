@@ -2698,17 +2698,7 @@ button,
   
 
 
-.filter input.ft[type="checkbox"]:checked + label.btn {
-    color: white ;
-    content:'';
-    background: #c8102e;
-  }
-  
 
-.filter input[type="checkbox"]:checked + label:before{
-  content: '';
-  background: #c8102e;
-}
 
 .filter input[type="checkbox"] + label:before{
   content: '';
