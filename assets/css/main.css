@@ -2660,7 +2660,7 @@ button,
       border-bottom:3px solid #960C22;
       padding-bottom: 1.43px;
       color: #fff9d9;
-      font-size: 7px;
+      font-size: 9px;
   }
 
 .btn:before {
@@ -2711,7 +2711,7 @@ button,
     border-bottom:3px solid #960C22;
     padding-bottom: 1.43px;
     color: #fff9d9;
-    font-size:5pt;
+    font-size:7pt;
 }
 
 .btnalt:before {
