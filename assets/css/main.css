@@ -2649,7 +2649,7 @@ button,
 .btn {
       display: inline-block;
       position: relative;
-      line-height: 1.2em;
+      line-height: 1.35em;
       padding: 0;
       margin-left: 10px;
       background: black;
@@ -2662,6 +2662,7 @@ button,
   }
 
 .btn:before {
+      right:100%;
       transform: translateX(-52%) rotate(45deg) scale(0.751);
       content:'';
       display:block;
@@ -2697,19 +2698,19 @@ button,
   
 
 
-.filter label.btn {
+.filter input.ft[type="checkbox"]:checked + label.btn {
     color: white ;
     content:'';
     background: #c8102e;
   }
   
 
-.filter label:before{
+.filter input[type="checkbox"]:checked + label:before{
   content: '';
   background: #c8102e;
 }
 
-.filter label:before{
+.filter input[type="checkbox"] + label:before{
   content: '';
   background: black;
   border:3.25px solid #960C22;
@@ -2727,7 +2728,7 @@ button,
       box-sizing: content-box;
 }
 
-.filter label{
+.filter input.ft[type="checkbox"] + label{
   text-decoration: none;
   color: #fff9d9;
   cursor: pointer;
