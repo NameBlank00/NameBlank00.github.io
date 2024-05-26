@@ -2663,11 +2663,11 @@ button,
   }
 
 .btn:before {
-      transform: translateX(-52%) rotate(45deg) scale(0.751);
+      transform: translateX(-52%) rotate(45deg) scale(0.78);
       content:'';
       display:block;
       position: absolute;
-      top:-3.5px; /* magic number = border width */
+      top:-3.2px; /* magic number = border width */
       width: 1.2em;
       height: 1.2em;
       background: inherit;
