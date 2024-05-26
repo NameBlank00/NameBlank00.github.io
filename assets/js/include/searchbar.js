@@ -1,4 +1,3 @@
-
 document.write('\
 \
 				<!-- Search -->\
