@@ -2649,7 +2649,7 @@ button,
 .btn {
       display: inline-block;
       position: relative;
-      line-height: 1.35em;
+      line-height: 1.2em;
       padding: 0;
       margin-left: 10px;
       background: #c8102e;
@@ -2662,7 +2662,6 @@ button,
   }
 
 .btn:before {
-      right:100%;
       transform: translateX(-52%) rotate(45deg) scale(0.751);
       content:'';
       display:block;
