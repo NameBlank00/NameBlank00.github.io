@@ -2653,13 +2653,14 @@ button,
       padding: 0;
       margin-left: 10px;
       background: #c8102e;
-      margin: 2em;
+      margin: 1em;
       /* just spacing */
       position: relative;
       border-top:3px solid #960C22;
       border-bottom:3px solid #960C22;
       padding-bottom: 1.43px;
       color: #fff9d9;
+      font-size: 7px;
   }
 
 .btn:before {
@@ -2692,7 +2693,6 @@ button,
       border:3.25px solid #960C22;
       border-radius: 5px;
       box-sizing: content-box;
-      font-size: 12px;
   }
   
   
@@ -2704,13 +2704,14 @@ button,
     padding: 0;
     margin-left: 10px;
     background: #262934;
-    margin: 2em;
+    margin: 1em;
     /* just spacing */
     position: relative;
     border-top:3px solid #960C22;
     border-bottom:3px solid #960C22;
     padding-bottom: 1.43px;
     color: #fff9d9;
+    font-size:7pt;
 }
 
 .btnalt:before {
@@ -2743,7 +2744,6 @@ button,
     border:3.25px solid #960C22;
     border-radius: 5px;
     box-sizing: content-box;
-    font-size: 12px;
 }
 
   
