@@ -2367,28 +2367,14 @@ button,
     margin-left: -26em; }
   @media screen and (max-width: 1680px) {
     #sidebar {
-      height: 100%;
-      left: 0;
-      position: fixed;
-      top: 0;
-      z-index: 10000;  }
+      width: 24em; }
       #sidebar > .inner {
-        -webkit-overflow-scrolling: touch;
-        height: 100%;
-        left: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        position: absolute;
-        top: 0; }
+        padding: 1.66667em 1.66667em 1.33333em 1.66667em ;
+        width: 24em; }
         #sidebar > .inner > .alt {
           margin: -1.66667em 0 3.33333em -1.66667em;
           padding: 1.66667em;
           width: calc(100% + 3.33333em); }
-          #sidebar > .inner:after {
-            content: '';
-            display: block;
-            height: 4em;
-            width: 100%; }
       #sidebar .toggle {
         height: 6.25em;
         left: 24em;
