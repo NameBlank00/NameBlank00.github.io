@@ -2371,7 +2371,8 @@ button,
       #sidebar > .inner {
         padding: 1.66667em 1.66667em 1.33333em 1.66667em ;
         width: 24em;
-        top: 0; }
+        top: 0;
+        position: fixed; }
         #sidebar > .inner > .alt {
           margin: -1.66667em 0 3.33333em -1.66667em;
           padding: 1.66667em;
