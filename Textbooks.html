@@ -484,7 +484,6 @@
 							</header>
 							<ul>
 								<li><a class="TitleLink" href="https://nameblank00.github.io/home.html">Homepage</a></li>
-								<li>
 							</ul>
 						</nav>
 	
@@ -703,9 +702,12 @@
 				});
 
 				
-				var list = document.querySelectorAll('input[type=checkbox]');
-					for (var item of list) {
-					item.checked = false;
+				window.onload = function abc() {
+					document.getElementsByTagName('input')[0].focus();
+					var a = document.getElementById('form_name').getElementsByTagName('input');
+					for (var i=0;i<a.length;i++) {
+						if (a[i].type == 'checkbox') a[i].checked = false;
+					}
 				}
 
 				}
