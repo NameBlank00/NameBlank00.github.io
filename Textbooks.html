@@ -691,13 +691,7 @@
 				filterResults(filters);
 				
 								
-				window.onload = function abc() {
-						document.getElementsByTagName('input')[0].focus();
-						var a = document.getElementById('form_name').getElementsByTagName('input');
-						for (var i=0;i<a.length;i++) {
-							if (a[i].type == 'checkbox') a[i].checked = false;
-						}
-					}
+				window.onload = document.querySelectorAll(" input[type='checkbox']").reset(); 
 					
 				}
 
