@@ -481,26 +481,101 @@
 						<nav id="tags" style="font-family: roboto slab, serif;">
 							<header class="major">	<h2 style="color: #ffffff">Textbooks Tags</h2> </header>
 							
-							<details open style="letter-spacing: 0.075em">	
-							<summary style="border-bottom:solid 1px rgba(210, 215, 217, 0.75);color:#ffffff;letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> Mathematics </summary>
-								<ul>
-
-									<details open>
-										<summary style="letter-spacing: 0.075em; text-transform: uppercase;"> Logic </summary>
-										<div class="checkbox">
-											<input type="checkbox" id="CM" name="CM" onchange="change()"> <label style="font-size:8pt" for="CM"> lel </label> <br>
-											<input type="checkbox" id="QFT" name="QFT" onchange="change()"> <label style="font-size:8pt" for="QFT"> lol </label> <br>
+							
+							<details open style="letter-spacing: 0.075em">
+								<summary style="letter-spacing: 0.075em; text-transform: uppercase"> Mathematics </summary>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Logic </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="CL" name="CL" onchange="change()"> <label style="font-size:8pt" for="CL"> Classical Logic </label> <br>
 										</div>
 									</details>
-
-									<details>
-										<input type="checkbox" id="CM2" name="CM2"> <label for="CM2" style="font-size:8pt"> Classical Mechanics</label> <br>
-										<input type="checkbox" id="QM2" name="QM2"> <label for="QM2" style="font-size:8pt"> Quantum Mechanics </label> <br>
+								</ul>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Foundation </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="ST" name="ST" onchange="change()"> <label style="font-size:8pt" for="ST"> Set Theory </label> <br>
+											<input type="checkbox" id="CT" name="CT" onchange="change()"> <label style="font-size:8pt" for="CT"> Category Theory </label> <br>
+											<input type="checkbox" id="MT" name="MT" onchange="change()"> <label style="font-size:8pt" for="MT"> Model Theory </label> <br>
+											<input type="checkbox" id="PT" name="PT" onchange="change()"> <label style="font-size:8pt" for="PT"> Proof Theory </label> <br>
+										</div>
 									</details>
 								</ul>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Algebra </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="LA" name="LA" onchange="change()"> <label style="font-size:8pt" for="LA"> Linear Algebra </label> <br>
+											<input type="checkbox" id="AA" name="AA" onchange="change()"> <label style="font-size:8pt" for="AA"> Abstract Algebra </label> <br>
+											<input type="checkbox" id="UA" name="UA" onchange="change()"> <label style="font-size:8pt" for="UA"> Universal Algebra </label> <br>
+											<input type="checkbox" id="RT" name="RT" onchange="change()"> <label style="font-size:8pt" for="RT"> Representation Theory </label> <br>
+										</div>
+									</details>
+								</ul>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Analysis </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="RA" name="RA" onchange="change()"> <label style="font-size:8pt" for="RA"> Real Analysis </label> <br>
+											<input type="checkbox" id="CA" name="CA" onchange="change()"> <label style="font-size:8pt" for="CA"> Complex Analysis </label> <br>
+											<input type="checkbox" id="DE" name="DE" onchange="change()"> <label style="font-size:8pt" for="DE"> Differential/Integral Equations </label> <br>
+											<input type="checkbox" id="MST" name="MST" onchange="change()"> <label style="font-size:8pt" for="MST"> Measure Theory </label> <br>
+											<input type="checkbox" id="FA" name="FA" onchange="change()"> <label style="font-size:8pt" for="FA"> Function Analysis </label> <br>
+											<input type="checkbox" id="HA" name="HA" onchange="change()"> <label style="font-size:8pt" for="HA"> Harmonic Analysis </label> <br>
+											<input type="checkbox" id="DS" name="DS" onchange="change()"> <label style="font-size:8pt" for="DS"> Dynamical Systems </label> <br>
+											<input type="checkbox" id="VA" name="VA" onchange="change()"> <label style="font-size:8pt" for="VA"> Variational Analysis </label> <br>
+											<input type="checkbox" id="NA" name="NA" onchange="change()"> <label style="font-size:8pt" for="NA"> Numerical Analysis </label> <br>
+											<input type="checkbox" id="SA" name="SA" onchange="change()"> <label style="font-size:8pt" for="SA"> Stochastic Analysis </label> <br>
+											<input type="checkbox" id="CFA" name="CFA" onchange="change()"> <label style="font-size:8pt" for="CFA"> Clifford Analysis </label> <br>
+										</div>
+									</details>
+								</ul>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Topology </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="GT" name="GT" onchange="change()"> <label style="font-size:8pt" for="GT"> General Topology </label> <br>
+											<input type="checkbox" id="AT" name="AT" onchange="change()"> <label style="font-size:8pt" for="AT"> Algebraic Topology </label> <br>
+											<input type="checkbox" id="SGT" name="SGT" onchange="change()"> <label style="font-size:8pt" for="SGT"> Surgery Theory </label> <br>
+											<input type="checkbox" id="DT" name="DT" onchange="change()"> <label style="font-size:8pt" for="DT"> Differential Topology </label> <br>
+										</div>
+									</details>
+								</ul>
+								
+								<ul style="list-style-position: inside">
+									<details open id="sectiontags">
+										<summary style="letter-spacing: 0.075em; text-transform: uppercase;font-size:9pt"> 
+											<a href="#div_logic" style="color:white;"> Geometry </a>
+										 </summary>
+										<div class="checkbox" style="padding-left:17px;">
+											<input type="checkbox" id="EG" name="EG" onchange="change()"> <label style="font-size:8pt" for="EG"> Euclidean Geometry </label> <br>
+											<input type="checkbox" id="DCG" name="DCG" onchange="change()"> <label style="font-size:8pt" for="DCG"> Discrete Geometry </label> <br>
+											<input type="checkbox" id="DFG" name="DFG" onchange="change()"> <label style="font-size:8pt" for="DFG"> Differential Geometry </label> <br>
+											<input type="checkbox" id="AG" name="AG" onchange="change()"> <label style="font-size:8pt" for="AG"> Algebraic Geometry </label> <br>
+										</div>
+									</details>
+								</ul>
+								
 							</details>
 							
-							<details style="letter-spacing: 0.075em">
+							<details open style="letter-spacing: 0.075em">
 							<summary> Physics </summary>
 							<div class="checkbox">
 								<input type="checkbox" id="QED" name="QED" onchange="change()"> <label style="font-size:8pt" for="QED"> Quantum Electrodynamics </label> <br>
