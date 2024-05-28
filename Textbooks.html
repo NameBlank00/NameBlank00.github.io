@@ -689,6 +689,16 @@
 				};
 
 				filterResults(filters);
+				
+								
+				window.onload = function abc() {
+						document.getElementsByTagName('input')[0].focus();
+						var a = document.getElementById('form_name').getElementsByTagName('input');
+						for (var i=0;i<a.length;i++) {
+							if (a[i].type == 'checkbox') a[i].checked = false;
+						}
+					}
+					
 				}
 
 				function getClassOfCheckedCheckboxes(checkboxes) {
@@ -764,14 +774,7 @@
 				for (var i = 0; i < hiddenElems.length; i++) {
 					hiddenElems[i].style.display = "none";
 				}
-				
-				window.onload = function abc() {
-						document.getElementsByTagName('input')[0].focus();
-						var a = document.getElementById('form_name').getElementsByTagName('input');
-						for (var i=0;i<a.length;i++) {
-							if (a[i].type == 'checkbox') a[i].checked = false;
-						}
-					}
+
 				}
 
 				
