@@ -702,6 +702,12 @@
 					result.style.display = 'block';
 				});
 
+				
+				var list = document.querySelectorAll('input[type=checkbox]');
+					for (var item of list) {
+					item.checked = false;
+				}
+
 				}
 				change();
 				//document.addEventListener("DOMContentLoaded", function(){});
@@ -718,6 +724,12 @@
 				};
 
 				filterResults(filters);
+				
+				var list = document.querySelectorAll('input[type=checkbox]');
+				for (var item of list) {
+					item.checked = false;
+				}
+				
 				}
 
 				function getClassOfCheckedCheckboxes(checkboxes) {
