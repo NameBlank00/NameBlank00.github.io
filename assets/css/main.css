@@ -2760,7 +2760,7 @@ summary{
   color: #000000;
 }
 
-.dark-mode .tags > input > label.tag {
+.dark-mode .tags > input[type="checkmark"] + label.tag {
   color: #000000;
 }
 
