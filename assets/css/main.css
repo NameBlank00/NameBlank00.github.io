@@ -1200,6 +1200,8 @@ input[type="radio"] {
     border-color: #3d4449;
     color: #ffffff;
     content: '\f00c'; }
+  .dark-mode input[type="checkbox"]:checked + label:before {
+    color: #3d4449; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
     border-color: #c8102e;
