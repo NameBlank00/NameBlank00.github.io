@@ -2756,6 +2756,10 @@ summary{
   color: #FFFFFF;
 }
 
+.dark-mode summary.tags{
+  color: #000000;
+}
+
 .dark-mode .tags > input > label.tag {
   color: #000000;
 }
