@@ -131,10 +131,10 @@ a {
       color: inherit; 
     }
     
-.dark-mode a.tag {
+.dark-mode a.tags {
   color: #000000
 }
-.dark-mode a.tag:hover {
+.dark-mode a.tags:hover {
   color: #000000
 }
     
