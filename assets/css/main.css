@@ -131,10 +131,10 @@ a {
       color: inherit; 
     }
     
-.dark-mode a.tags {
+.dark-mode a.tag {
   color: #000000
 }
-.dark-mode a.tags:hover {
+.dark-mode a.tag:hover {
   color: #000000
 }
     
@@ -1209,7 +1209,7 @@ input[type="radio"] {
     color: #ffffff;
     content: '\f00c'; }
   .dark-mode input[type="checkbox"]:checked + label:before {
-    color: #3d4449; }
+    background: #3d4449; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
     border-color: #c8102e;
