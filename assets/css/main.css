@@ -131,6 +131,9 @@ a {
       color: inherit; 
     }
     
+a.tags {
+  color: #FFFFFF
+}
 .dark-mode a.tags {
   color: #000000
 }
