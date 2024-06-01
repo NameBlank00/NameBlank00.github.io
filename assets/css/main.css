@@ -2710,6 +2710,64 @@ button,
   
   
   
+
+
+
+
+
+
+  .btnmain {
+    display: inline-block;
+    position: relative;
+    line-height: 1.1em;
+    padding: 0;
+    margin-left: 10px;
+    background: #fff9d9;
+    ;
+    margin: 1em;
+    /* just spacing */
+    position: relative;
+    border-top:3px solid #960C22;
+    border-bottom:3px solid #960C22;
+    padding-bottom: 1.43px;
+    color: #0000;
+    font-size: 9px;
+}
+
+.btnmain:before {
+    transform: translateX(-52%) rotate(45deg) scale(0.78);
+    content:'';
+    display:block;
+    position: absolute;
+    top:-3.1px; /* magic number = border width */
+    width: 1.2em;
+    height: 1.2em;
+    background: inherit;
+    transform-origin:center;
+    z-index:-1;
+    border:3.25px solid #960C22;
+    border-radius: 5px;
+    box-sizing: content-box;
+}
+.btnmain:after {
+    left:100%;
+    transform: translateX(-52%)rotate(45deg) scale(0.78);
+    content:'';
+    display:block;
+    position: absolute;
+    top:-3.1px; /* magic number = border width */
+    width: 1.2em;
+    height: 1.2em;
+    background: inherit;
+    transform-origin:center;
+    z-index:-1;
+    border:3.25px solid #960C22;
+    border-radius: 5px;
+    box-sizing: content-box;
+}
+  
+  
+  
 .btnalt {
     display: inline-block;
     position: relative;
