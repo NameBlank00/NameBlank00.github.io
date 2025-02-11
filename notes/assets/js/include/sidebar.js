@@ -7,8 +7,8 @@ document.write('\
 						</header>\
 						<ul>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/home.html">Homepage</a></li>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Notes</a></li>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/notes/Physics/Physics_Content.html">Notes</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Physics Notes</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/notes/Physics/Physics_Content.html">Mathematics Notes</a></li>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/Textbooks.html">Textbooks</a></li>\
 							<li><a class="TitleLink" href="#">About Me</a></li>\
 						</ul>\
