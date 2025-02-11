@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 /*
 	Industrious by TEMPLATED
 	templated.co @templatedco
@@ -455,7 +455,7 @@ input[type="radio"] {
     input[type="radio"] + label:before {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
+      font-family: 'Font Awesome 5 Free';
       font-style: normal;
       font-weight: normal;
       text-transform: none !important; }
@@ -1724,7 +1724,7 @@ ul.actions {
   .icon:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
     font-weight: normal;
     text-transform: none !important; }
@@ -2449,7 +2449,7 @@ body {
       #header > nav > a[href="#menu"]:before {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
-        font-family: FontAwesome;
+        font-family: 'Font Awesome 5 Free';
         font-style: normal;
         font-weight: normal;
         text-transform: none !important; }
@@ -2796,7 +2796,7 @@ body {
     #menu .close:before {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
+      font-family: 'Font Awesome 5 Free';
       font-style: normal;
       font-weight: normal;
       text-transform: none !important; }
