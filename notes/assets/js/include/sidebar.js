@@ -10,7 +10,6 @@ document.write('\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Physics Notes</a></li>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/notes/Physics/Physics_Content.html">Mathematics Notes</a></li>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/Textbooks.html">Textbooks</a></li>\
-							<li><a class="TitleLink" href="#">About Me</a></li>\
 						</ul>\
 					</nav>\
 \
@@ -19,7 +18,7 @@ document.write('\
 						<header class="major">\
 							<h2 style="color: #ffffff">Get in touch</h2>\
 						</header>\
-						<p style="color: white"> Have any questions, comments, or anything you would like to send to me? You can contact me by the information below:.</p>\
+						<p style="color: white"> Have any questions, comments, or anything you would like to send to me? You can contact me by the information below:</p>\
 						<ul class="contact">\
 							<li style="color: white", class="icon solid fa-envelope"><a href="mailto:JonathanGonzales1357@gmail.com">JonathanGonzales1357@gmail.com</a></li>\
 						</ul>\
