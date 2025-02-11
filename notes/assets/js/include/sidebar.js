@@ -7,30 +7,8 @@ document.write('\
 						</header>\
 						<ul>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/home.html">Homepage</a></li>\
-							<li>\
-								<span class="opener">Subject: Mathematics</span>\
-								<ul>\
-									<li style="color: white"><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Notes</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">Proofs</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
-								</ul>\
-							</li>\
-							<li>\
-								<span class="opener">Subject: Physics</span>\
-								<ul>\
-									<li style="color: white"><a class="TitleLink" href="https://nameblank00.github.io/Physics/Physics_Content.html">Notes</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">Experiments</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">Articles</a></li>\
-								</ul>\
-							</li>\
-							<li>\
-								<span class="opener">Subject: Computer Science</span>\
-								<ul>\
-									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
-									<li style="color: white"><a class="TitleLink" href="#">N/A</a></li>\
-								</ul>\
-							</li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Notes</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/notes/Physics/Physics_Content.html">Notes</a></li>\
 							<li><a class="TitleLink" href="https://nameblank00.github.io/Textbooks.html">Textbooks</a></li>\
 							<li><a class="TitleLink" href="#">About Me</a></li>\
 						</ul>\
