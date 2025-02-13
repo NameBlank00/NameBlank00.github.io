@@ -6,10 +6,10 @@ document.write('\
 							<h2 style="color: #ffffff">Menu</h2>\
 						</header>\
 						<ul>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/home.html">Homepage</a></li>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/Mathematics/Mathematics_Content.html">Physics Notes</a></li>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/notes/Physics/Physics_Content.html">Mathematics Notes</a></li>\
-							<li><a class="TitleLink" href="https://nameblank00.github.io/Textbooks.html">Textbooks</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/general_notes/home.html">Homepage</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/general_notes/Mathematics/Mathematics_Content.html">Physics Notes</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/general_notes/Physics/Physics_Content.html">Mathematics Notes</a></li>\
+							<li><a class="TitleLink" href="https://nameblank00.github.io/general_notes/Textbooks.html">Textbooks</a></li>\
 						</ul>\
 					</nav>\
 \
