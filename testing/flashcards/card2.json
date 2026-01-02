@@ -1,0 +1,20 @@
+{
+  "1": {
+    "1": {
+      "1": [
+        {
+          "statement": "What is the derivative of $x^3$?",
+          "answer": "The derivative is $\\frac{d}{dx}x^3 = 3x^2$.",
+          "hints": ["Use the power rule"],
+          "tags": ["math", "calculus"]
+        },
+        {
+          "statement": "Evaluate Wigglenes $\\int_0^1 x^2 dx$.",
+          "answer": "The integral evaluates to $\\frac{1}{3} x^3 \\Big|_0^1 = \\frac{1}{3}$.",
+          "hints": ["Recall the formula $\\int x^n dx = \\frac{x^{n+1}}{n+1}$"],
+          "tags": ["math", "calculus", "integrals"]
+        }
+      ]
+    }
+  }
+}
