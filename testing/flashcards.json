@@ -3,21 +3,34 @@
     "1": {
       "1": [
         {
-          "statement": "What is the area of a circle? (See dict('math'))",
-          "answer": "The area of a circle is A = πr².",
-          "hints": [
-            "Think about radius.",
-            "The formula uses π."
-          ],
+          "statement": "What is the derivative of $x^3$?",
+          "answer": "The derivative is $\\frac{d}{dx}x^3 = 3x^2$.",
+          "hints": ["Use the power rule"],
+          "tags": ["math", "calculus"]
+        },
+        {
+          "statement": "Evaluate the integral $\\int_0^1 x^2 dx$.",
+          "answer": "The integral evaluates to $\\frac{1}{3} x^3 \\Big|_0^1 = \\frac{1}{3}$.",
+          "hints": ["Recall the formula $\\int x^n dx = \\frac{x^{n+1}}{n+1}$"],
+          "tags": ["math", "calculus", "integrals"]
+        },
+        {
+          "statement": "What is the formula for the area of a circle?",
+          "answer": "The area is $A = \\pi r^2$.",
+          "hints": ["Remember $\\pi$ is approximately 3.14159"],
           "tags": ["math", "geometry"]
         },
         {
-          "statement": "What does π represent? (See dict('math'))",
-          "answer": "π is the ratio of a circle’s circumference to its diameter.",
-          "hints": [
-            "It is approximately 3.14159."
-          ],
-          "tags": ["math"]
+          "statement": "Write the quadratic formula for $ax^2 + bx + c = 0$.",
+          "answer": "The solution is $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$.",
+          "hints": ["Check the discriminant $b^2 - 4ac$"],
+          "tags": ["math", "algebra"]
+        },
+        {
+          "statement": "State Einstein's mass-energy equivalence formula.",
+          "answer": "The famous formula is $E = mc^2$.",
+          "hints": ["Energy equals mass times the speed of light squared"],
+          "tags": ["physics"]
         }
       ]
     }
