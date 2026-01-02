@@ -1,8 +1,11 @@
 let currentCard = null;
 let confirmNextClick = false;
 let flashData = null;
+let currentIndex = ""; // store X.Y.Z.W
 
-// Fetch data
+const answerBtn = document.querySelector("button#show-answer");
+const nextBtn = document.getElementById("next-btn");
+
 fetch("flashcards.json")
   .then(res => res.json())
   .then(data => {
@@ -10,15 +13,20 @@ fetch("flashcards.json")
     loadRandomCard();
   });
 
-// Load a random card
+// Load random card
 function loadRandomCard() {
   const X = randomKey(flashData);
   const Y = randomKey(flashData[X]);
   const Z = randomKey(flashData[X][Y]);
+  const W = Math.floor(Math.random() * flashData[X][Y][Z].length);
 
-  currentCard = flashData[X][Y][Z][Math.floor(Math.random() * flashData[X][Y][Z].length)];
+  currentCard = flashData[X][Y][Z][W];
+  currentIndex = `${X}.${Y}.${Z}.${W + 1}`; // W+1 so index starts at 1
 
-  document.getElementById("statement").innerHTML = currentCard.statement;
+  // display statement and index
+  document.getElementById("card-text").innerHTML = currentCard.statement;
+  document.getElementById("card-index").textContent = currentIndex;
+
   document.getElementById("answer").style.display = "none";
 
   renderMath();
