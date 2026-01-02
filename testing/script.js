@@ -1,31 +1,56 @@
-let card = null;
-
+let currentCard = null;
+let confirmNextClick = false;
 
 const answerBtn = document.querySelector("button");
-answerBtn.disabled = true; // disable until ready
+const nextBtn = document.getElementById("next-btn");
+
+answerBtn.disabled = true;
 
 fetch("flashcards.json")
   .then(res => res.json())
   .then(data => {
-    const X = Object.keys(data)[0];
-    const Y = Object.keys(data[X])[0];
-    const Z = Object.keys(data[X][Y])[0];
-
-    currentCard = data[X][Y][Z][0];
-
-    document.getElementById("statement").textContent = currentCard.statement;
-
-    // Enable button only AFTER data loads
-    answerBtn.disabled = false;
-  })
-  .catch(err => {
-    console.error("Failed to load flashcards:", err);
+    window.flashData = data;
+    loadRandomCard();
   });
 
-function showAnswer() {
-  if (!currentCard) return; // safety check
+function loadRandomCard() {
+  const X = randomKey(flashData);
+  const Y = randomKey(flashData[X]);
+  const Z = randomKey(flashData[X][Y]);
 
-  const answerBox = document.getElementById("answer");
-  answerBox.textContent = currentCard.answer;
-  answerBox.style.display = "block";
+  currentCard = flashData[X][Y][Z][Math.floor(Math.random() * flashData[X][Y][Z].length)];
+
+  document.getElementById("statement").textContent = currentCard.statement;
+  document.getElementById("answer").style.display = "none";
+
+  answerBtn.disabled = false;
+  resetNextButton();
+}
+
+function showAnswer() {
+  if (!currentCard) return;
+  document.getElementById("answer").textContent = currentCard.answer;
+  document.getElementById("answer").style.display = "block";
+}
+
+function confirmNext() {
+  if (!confirmNextClick) {
+    confirmNextClick = true;
+    document.getElementById("next-btn").textContent = "Click again to confirm";
+    return;
+  }
+
+  // confirmed
+  confirmNextClick = false;
+  document.getElementById("next-btn").textContent = "Next Card";
+  loadRandomCard();
+}
+
+function resetNextButton() {
+  confirmNextClick = false;
+  document.getElementById("next-btn").textContent = "Next Card";
+}
+
+function randomKey(obj) {
+  return Object.keys(obj)[Math.floor(Math.random() * Object.keys(obj).length)];
 }
