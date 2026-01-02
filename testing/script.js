@@ -1,32 +1,63 @@
-let flashcardsData = null;  // Global variable to store the JSON data once it's loaded
+let flashcardsData = null;
+let dictionaryData = null;
 
-// Function to fetch the data (once at the beginning)
+let currentCard = null;
+let currentHintIndex = 0;
+
 function loadData() {
-  fetch('flashcards.json')  // Assuming your data is stored in 'flashcards.json'
-    .then(response => response.json())
-    .then(data => {
-      flashcardsData = data;
-      generateRandomStatement();  // Generate a random statement once the data is loaded
-    })
-    .catch(error => {
-      console.error("Error loading flashcard data:", error);
-    });
+  Promise.all([
+    fetch('flashcards.json').then(res => res.json()),
+    fetch('dictionary.json').then(res => res.json())
+  ])
+  .then(([flashcards, dictionary]) => {
+    flashcardsData = flashcards;
+    dictionaryData = dictionary;
+    generateRandomStatement();
+  })
+  .catch(err => console.error("Load error:", err));
 }
+
 
 // Call loadData when the page is loaded
 window.onload = loadData;
 
 // Function to generate a random statement from the flashcards data
 function generateRandomStatement() {
-  if (!flashcardsData) return;  // Ensure data is loaded
+  if (!flashcardsData) return;
 
   const flashcards = flashcardsData.flashcards;
   const x = Object.keys(flashcards)[Math.floor(Math.random() * Object.keys(flashcards).length)];
   const y = Object.keys(flashcards[x])[Math.floor(Math.random() * Object.keys(flashcards[x]).length)];
   const card = flashcards[x][y][Math.floor(Math.random() * flashcards[x][y].length)];
 
-  detectAndLinkWords(card.statement);  // Display the card with linked dictionary words
+  currentCard = card;
+  currentHintIndex = 0;
+
+  detectAndLinkWords(card.statement);
+
+  // Show or hide hint button
+  const hintBtn = document.getElementById("hint-btn");
+  if (card.hints && card.hints.length > 0) {
+    hintBtn.style.display = "inline-block";
+    hintBtn.innerText = "Show Hint";
+  } else {
+    hintBtn.style.display = "none";
+  }
 }
+
+
+
+function showHint() {
+  if (!currentCard || !currentCard.hints) return;
+
+  alert("Hint: " + currentCard.hints[currentHintIndex]);
+
+  currentHintIndex++;
+  if (currentHintIndex >= currentCard.hints.length) {
+    document.getElementById("hint-btn").style.display = "none";
+  }
+}
+
 
 // Function to filter flashcards by tag (without modifying the original JSON)
 function filterFlashcardsByTag(tag) {
@@ -62,26 +93,30 @@ function applyTagFilter() {
 
 // Function to detect words like dict('word') and link them to the dictionary
 function detectAndLinkWords(statement) {
-  const regex = /dict\(['"]([^'"]+)['"]\)/g;  // Regular expression to match dict('word')
+  const regex = /dict\(['"]([^'"]+)['"]\)/g;
   let modifiedStatement = statement;
   let match;
 
   while ((match = regex.exec(statement)) !== null) {
-    const word = match[1].toLowerCase(); // Extract the word inside dict('word')
+    const word = match[1].toLowerCase();
     if (flashcardsData.dictionary[word]) {
-      // Create a clickable link for the word
       const wordLink = `<span class="dictionary-word" onclick="showDictionaryDefinition('${word}')">${word}</span>`;
       modifiedStatement = modifiedStatement.replace(match[0], wordLink);
     }
   }
 
-  // Update the card content with the clickable statement
-  document.getElementById('card-content').innerHTML = modifiedStatement;
+  const card = document.getElementById('card-content');
+  card.innerHTML = modifiedStatement;
+
+  // 🔥 Force MathJax to re-render
+  if (window.MathJax) {
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, card]);
+  }
 }
 
 // Function to show the dictionary definition in a popup
 function showDictionaryDefinition(word) {
-  const definition = flashcardsData.dictionary[word];
+  const definition = dictionaryData[word];
   if (definition) {
     // Create a popup with the definition
     const popup = document.createElement('div');
