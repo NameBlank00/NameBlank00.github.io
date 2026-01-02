@@ -1,32 +1,54 @@
+let flashcardsData = {};
 let currentCard = null;
+let currentIndex = "";
+
 let confirmNextClick = false;
-let flashData = null;
-let currentIndex = ""; // store X.Y.Z.W
 
-const answerBtn = document.querySelector("button#show-answer");
-const nextBtn = document.getElementById("next-btn");
+// Load the manifest first, then load all files listed in it
+async function loadAllFlashcards() {
+  try {
+    const manifestRes = await fetch("flashcards_manifest.json");
+    const manifest = await manifestRes.json(); // array of file paths
 
-fetch("flashcards.json")
-  .then(res => res.json())
-  .then(data => {
-    flashData = data;
+    for (const file of manifest) {
+      const res = await fetch(file);
+      const data = await res.json();
+      mergeFlashcards(flashcardsData, data);
+    }
+
     loadRandomCard();
-  });
+  } catch (err) {
+    console.error("Error loading flashcards manifest:", err);
+  }
+}
 
-// Load random card
+// Merge flashcards recursively
+function mergeFlashcards(target, source) {
+  for (const X in source) {
+    if (!target[X]) target[X] = {};
+    for (const Y in source[X]) {
+      if (!target[X][Y]) target[X][Y] = {};
+      for (const Z in source[X][Y]) {
+        if (!target[X][Y][Z]) target[X][Y][Z] = [];
+        target[X][Y][Z] = target[X][Y][Z].concat(source[X][Y][Z]);
+      }
+    }
+  }
+}
+
+// Load a random card
 function loadRandomCard() {
-  const X = randomKey(flashData);
-  const Y = randomKey(flashData[X]);
-  const Z = randomKey(flashData[X][Y]);
-  const W = Math.floor(Math.random() * flashData[X][Y][Z].length);
+  const X = randomKey(flashcardsData);
+  const Y = randomKey(flashcardsData[X]);
+  const Z = randomKey(flashcardsData[X][Y]);
+  const cards = flashcardsData[X][Y][Z];
 
-  currentCard = flashData[X][Y][Z][W];
-  currentIndex = `${X}.${Y}.${Z}.${W + 1}`; // W+1 so index starts at 1
+  const W = Math.floor(Math.random() * cards.length);
+  currentCard = cards[W];
+  currentIndex = `${X}.${Y}.${Z}.${W + 1}`;
 
-  // display statement and index
   document.getElementById("card-text").innerHTML = currentCard.statement;
   document.getElementById("card-index").textContent = currentIndex;
-
   document.getElementById("answer").style.display = "none";
 
   renderMath();
@@ -42,34 +64,33 @@ function showAnswer() {
   renderMath();
 }
 
-// ✅ The missing function
+// MathJax rendering
+function renderMath() {
+  if (window.MathJax) MathJax.typesetPromise();
+}
+
+// Next button logic (double click to confirm)
 function confirmNext() {
   const nextBtn = document.getElementById("next-btn");
-
   if (!confirmNextClick) {
     confirmNextClick = true;
     nextBtn.textContent = "Click again to confirm";
     return;
   }
-
-  // confirmed
   confirmNextClick = false;
   nextBtn.textContent = "Next Card";
   loadRandomCard();
 }
 
-// Reset next button (used on load)
 function resetNextButton() {
   confirmNextClick = false;
   document.getElementById("next-btn").textContent = "Next Card";
 }
 
-// Random key helper
+// Utility: pick random key from object
 function randomKey(obj) {
   return Object.keys(obj)[Math.floor(Math.random() * Object.keys(obj).length)];
 }
 
-// MathJax rendering
-function renderMath() {
-  if (window.MathJax) MathJax.typesetPromise();
-}
+// Start loading all flashcards
+loadAllFlashcards();
