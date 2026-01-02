@@ -4,25 +4,21 @@
       "1": {
         "1": [
           {
-            "statement": "What is the area of a circle? (Hint: Use dict('math'))",
+            "statement": "What is the area of a circle? (Hint: dict('math'))",
             "answer": "The area is calculated using the formula A = πr².",
+            "hints": [
+              "Think about the radius.",
+              "The formula involves π."
+            ],
             "tags": ["easy", "math", "geometry"]
           },
           {
             "statement": "What is the chemical symbol for water? (Hint: dict('science'))",
             "answer": "The chemical symbol for water is H₂O.",
-            "tags": ["easy", "science", "chemistry"]
-          }
-        ]
-      }
-    },
-    "2": {
-      "1": {
-        "1": [
-          {
-            "statement": "What is the capital of France? (Hint: dict('geography'))",
-            "answer": "The capital of France is Paris.",
-            "tags": ["easy", "geography"]
+            "hints": [
+              "It contains hydrogen and oxygen."
+            ],
+            "tags": ["easy", "science"]
           }
         ]
       }
