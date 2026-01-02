@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcard System with Dictionary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    #flashcard {
+      width: 300px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50px auto;
+      word-wrap: break-word;
+    }
+    .dictionary-word {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flashcard System with Dictionary</h1>
+  
+  <!-- Tag filtering controls -->
+  <select id="tag-filter">
+    <option value="easy">Easy</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="hard">Hard</option>
+    <option value="math">Math</option>
+    <option value="science">Science</option>
+    <option value="literature">Literature</option>
+  </select>
+  
+  <button onclick="applyTagFilter()">Filter by Tag</button>
+
+  <div id="flashcard">
+    <p id="card-content">Click the button below to see a flashcard with dictionary references!</p>
+  </div>
+  
+  <button onclick="generateRandomStatement()">Next Statement</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
