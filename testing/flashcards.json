@@ -1,27 +1,25 @@
 {
-  "flashcards": {
+  "1": {
     "1": {
-      "1": {
-        "1": [
-          {
-            "statement": "What is the area of a circle? (Hint: dict('math'))",
-            "answer": "The area is calculated using the formula A = πr².",
-            "hints": [
-              "Think about the radius.",
-              "The formula involves π."
-            ],
-            "tags": ["easy", "math", "geometry"]
-          },
-          {
-            "statement": "What is the chemical symbol for water? (Hint: dict('science'))",
-            "answer": "The chemical symbol for water is H₂O.",
-            "hints": [
-              "It contains hydrogen and oxygen."
-            ],
-            "tags": ["easy", "science"]
-          }
-        ]
-      }
+      "1": [
+        {
+          "statement": "What is the area of a circle? (See dict('math'))",
+          "answer": "The area of a circle is A = πr².",
+          "hints": [
+            "Think about radius.",
+            "The formula uses π."
+          ],
+          "tags": ["math", "geometry"]
+        },
+        {
+          "statement": "What does π represent? (See dict('math'))",
+          "answer": "π is the ratio of a circle’s circumference to its diameter.",
+          "hints": [
+            "It is approximately 3.14159."
+          ],
+          "tags": ["math"]
+        }
+      ]
     }
   }
 }
