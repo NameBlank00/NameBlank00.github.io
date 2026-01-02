@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Flash Cards</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
 
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 25px;
+      width: 60%;
+      margin: 0 auto 20px auto;
+      font-size: 18px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #answer {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
 <body>
 
-  <div id="dictionary-box" class="dictionary-box"></div>
+  <h1>Flash Cards</h1>
 
-  <div id="statement-box" class="card"></div>
+  <div id="statement" class="card">Loading...</div>
 
-  <div class="controls">
-    <button id="hint-btn" onclick="showHint()">Hint</button>
-    <button onclick="showAnswer()">Answer</button>
-  </div>
+  <button onclick="showAnswer()">Show Answer</button>
 
-  <div id="answer-box" class="answer-box"></div>
+  <div id="answer"></div>
 
   <script src="script.js"></script>
 </body>
