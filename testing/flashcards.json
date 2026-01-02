@@ -1,0 +1,29 @@
+{
+  "flashcards": {
+    "1": {
+      "1": [
+        {
+          "statement": "Statement 1.1.1 with a reference to dict('math')",
+          "tags": ["easy", "math", "beginner"]
+        },
+        {
+          "statement": "Statement 1.1.2 with a reference to dict('literature')",
+          "tags": ["intermediate", "literature"]
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "statement": "Statement 2.1.1 with dict('science')",
+          "tags": ["easy", "science"]
+        }
+      ]
+    }
+  },
+  "dictionary": {
+    "math": "Mathematics is the abstract science of number, quantity, and space.",
+    "science": "Science is the study of the physical and natural world through observation and experiment.",
+    "literature": "Literature is written works, especially those considered of superior or lasting artistic merit."
+  }
+}
