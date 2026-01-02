@@ -20,17 +20,21 @@ function loadRandomCard() {
 
   currentCard = flashData[X][Y][Z][Math.floor(Math.random() * flashData[X][Y][Z].length)];
 
-  document.getElementById("statement").textContent = currentCard.statement;
+  document.getElementById("statement").innerHTML = currentCard.statement;
   document.getElementById("answer").style.display = "none";
 
-  answerBtn.disabled = false;
+  renderMath();
   resetNextButton();
 }
 
 function showAnswer() {
   if (!currentCard) return;
-  document.getElementById("answer").textContent = currentCard.answer;
-  document.getElementById("answer").style.display = "block";
+
+  const box = document.getElementById("answer");
+  box.innerHTML = currentCard.answer;
+  box.style.display = "block";
+
+  renderMath();
 }
 
 function confirmNext() {
@@ -53,4 +57,11 @@ function resetNextButton() {
 
 function randomKey(obj) {
   return Object.keys(obj)[Math.floor(Math.random() * Object.keys(obj).length)];
+}
+
+
+function renderMath() {
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
 }
