@@ -1,75 +1,77 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcard System with Dictionary</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-    }
-    #flashcard {
-      width: 300px;
-      height: 200px;
-      border: 2px solid #333;
-      border-radius: 10px;
-      padding: 20px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 50px auto;
-      word-wrap: break-word;
-    }
-    .dictionary-word {
-      color: blue;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: #555;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Flashcards</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .card-box {
+    background: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+  }
+
+  .dictionary-popup {
+    background: #fffbe6;
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: none;
+  }
+
+  .dictionary-word {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .buttons {
+    margin-top: 15px;
+  }
+
+  button {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  #answer-box {
+    display: none;
+    background: #e8f0ff;
+    border: 1px solid #777;
+    margin-top: 15px;
+    padding: 15px;
+  }
+</style>
 </head>
+
 <body>
 
-  <h1>Flashcard System with Dictionary</h1>
-  
-  <!-- Tag filtering controls -->
-  <select id="tag-filter">
-    <option value="easy">Easy</option>
-    <option value="intermediate">Intermediate</option>
-    <option value="hard">Hard</option>
-    <option value="math">Math</option>
-    <option value="science">Science</option>
-    <option value="literature">Literature</option>
-  </select>
-  
-  <button onclick="applyTagFilter()">Filter by Tag</button>
+<!-- Dictionary popup -->
+<div id="dictionary-box" class="dictionary-popup"></div>
 
-  <div id="flashcard">
-    <p id="card-content">Click the button below to see a flashcard with dictionary references!</p>
-  </div>
-  <button id="hint-btn" style="display:none;" onclick="showHint()">Show Hint</button>
-  
-  <button onclick="generateRandomStatement()">Next Statement</button>
+<!-- Statement -->
+<div id="statement-box" class="card-box"></div>
 
-  <script src="script.js"></script>
-  <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<!-- Buttons -->
+<div class="buttons">
+  <button id="hint-btn" onclick="showHint()" style="display:none;">Show Hint</button>
+  <button onclick="showAnswer()">Show Answer</button>
+</div>
 
+<!-- Answer -->
+<div id="answer-box"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
