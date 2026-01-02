@@ -1,18 +1,16 @@
 let currentCard = null;
 let confirmNextClick = false;
+let flashData = null;
 
-const answerBtn = document.querySelector("button");
-const nextBtn = document.getElementById("next-btn");
-
-answerBtn.disabled = true;
-
+// Fetch data
 fetch("flashcards.json")
   .then(res => res.json())
   .then(data => {
-    window.flashData = data;
+    flashData = data;
     loadRandomCard();
   });
 
+// Load a random card
 function loadRandomCard() {
   const X = randomKey(flashData);
   const Y = randomKey(flashData[X]);
@@ -27,41 +25,43 @@ function loadRandomCard() {
   resetNextButton();
 }
 
+// Show answer
 function showAnswer() {
   if (!currentCard) return;
-
   const box = document.getElementById("answer");
   box.innerHTML = currentCard.answer;
   box.style.display = "block";
-
   renderMath();
 }
 
+// ✅ The missing function
 function confirmNext() {
+  const nextBtn = document.getElementById("next-btn");
+
   if (!confirmNextClick) {
     confirmNextClick = true;
-    document.getElementById("next-btn").textContent = "Click again to confirm";
+    nextBtn.textContent = "Click again to confirm";
     return;
   }
 
   // confirmed
   confirmNextClick = false;
-  document.getElementById("next-btn").textContent = "Next Card";
+  nextBtn.textContent = "Next Card";
   loadRandomCard();
 }
 
+// Reset next button (used on load)
 function resetNextButton() {
   confirmNextClick = false;
   document.getElementById("next-btn").textContent = "Next Card";
 }
 
+// Random key helper
 function randomKey(obj) {
   return Object.keys(obj)[Math.floor(Math.random() * Object.keys(obj).length)];
 }
 
-
+// MathJax rendering
 function renderMath() {
-  if (window.MathJax) {
-    MathJax.typesetPromise();
-  }
+  if (window.MathJax) MathJax.typesetPromise();
 }
