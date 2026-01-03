@@ -3,129 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Flash Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      text-align: center;
-      padding: 40px;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    .card {
-      position: relative;
-      background: white;
-      border: 2px solid #333;
-      border-radius: 10px;
-      padding: 25px;
-      width: 60%;
-      margin: 0 auto 20px auto;
-      font-size: 18px;
-    }
-
-    .card-index {
-      position: absolute;
-      top: 8px;
-      left: 10px;
-      font-size: 12px;
-      color: rgba(0,0,0,0.3);
-    }
-
-    button {
-      padding: 10px 18px;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    #hints, #answer {
-      width: 60%;
-      margin: 15px auto 0 auto;
-      padding: 15px;
-      border-radius: 8px;
-      background: #ffffff;
-      border: 1px solid #999;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      display: none;
-      text-align: left;
-    }
-
-    /* Filter styling */
-    .filter-container {
-      width: 60%;
-      margin: 0 auto 25px auto;
-      text-align: left;
-      font-size: 15px;
-    }
-
-    .filter-header {
-      background: #eaeaea;
-      padding: 10px 15px;
-      border: 1px solid #999;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .filter-body {
-      display: none; /* hidden by default */
-      border: 1px solid #999;
-      border-top: none;
-      padding: 15px;
-      background: #ffffff;
-      border-radius: 0 0 6px 6px;
-    }
-
-    .filter-row {
-      display: flex;       /* horizontal row of sections */
-      gap: 25px;           /* space between columns */
-      margin-bottom: 15px;
-    }
-
-    .filter-section {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 8px 12px;
-      min-width: 120px;  
-      text-align: left;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin-bottom: 6px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 2px;
-    }
-
-    .filter-section label {
-      display: block;
-      margin: 4px 0;
-      font-size: 14px;
-    }
-
-    .arrow {
-      font-size: 12px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
+<body class="dark-mode">
 
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: { fontCache: 'global' }
-  };
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <!-- Page Title above the rectangle -->
+  <h1 class="page-title">Title</h1>
 
-<body>
+  <!-- Main container (rounded rectangle) -->
+  <div class="main-container">
+
+    <!-- Dark/Light mode toggle -->
+    <button id="mode-toggle" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+
 
 <h1>Flash Cards</h1>
 
@@ -188,7 +85,7 @@
 <div id="hints"></div>
 <div id="answer"></div>
 
-<script>
+<!-- <script>
   // Toggle filter body
   function toggleFilter() {
     const body = document.getElementById("filter-body");
@@ -204,7 +101,16 @@
       }
     });
   });
-</script>
+</script> -->
+
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 
 <script src="script.js"></script>
 </body>
