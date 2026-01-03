@@ -37,7 +37,9 @@
         {
           "statement": "State Einstein's mass-energy equivalence formula.",
           "answer": "The famous formula is $E = mc^2$.",
-          "hints": ["Energy equals mass times the speed of light squared"],
+          "hints": [
+            "Energy equals mass times the speed of light squared",
+            "Energy can exist in kinetic or potential form"],
           "tags": ["physics"]
         }
       ]

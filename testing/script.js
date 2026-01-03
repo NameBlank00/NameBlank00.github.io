@@ -111,25 +111,28 @@ function showHints() {
   hintsBox.style.display = "block";
 
   currentCard.hints.forEach((hintText, index) => {
+    // Preview label (first 35 chars + ellipsis if too long)
+    const preview = hintText.length > 35 ? hintText.slice(0, 35) + "..." : hintText;
+
     // Create checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "hint-" + index;
 
-    // Label
+    // Label with preview
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
-    label.textContent = "Hint " + (index + 1);
+    label.textContent = preview;
 
-    // Hint text div
+    // Hint text div (hidden by default)
     const hintDiv = document.createElement("div");
     hintDiv.textContent = hintText;
     hintDiv.style.display = "none";
-    hintDiv.style.margin = "5px 0 10px 20px"; // indent
-    hintDiv.style.color = "lightblue"; // optional color
+    hintDiv.style.margin = "5px 0 10px 20px";
+    hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
-    // Show/hide on checkbox change
+    // Show/hide hint on checkbox toggle
     checkbox.addEventListener("change", () => {
       hintDiv.style.display = checkbox.checked ? "block" : "none";
     });
@@ -140,6 +143,7 @@ function showHints() {
     hintsBox.appendChild(hintDiv);
   });
 }
+
 
 
 
