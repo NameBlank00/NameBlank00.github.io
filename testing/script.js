@@ -101,15 +101,16 @@ function showHints() {
 
   hintsBox.style.display = "block";
 
-  currentCard.hints.forEach((hintArray, index) => {
-    const hintText = hintArray.join(" "); // combine if multiple sentences
+  currentCard.hints.forEach((hint, index) => {
+    // hintText is hint itself if string, or join if it's an array
+    const hintText = Array.isArray(hint) ? hint.join(" ") : hint;
 
     // Checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "hint-" + index;
 
-    // Label
+    // Label: Hint #
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
     label.textContent = "Hint #" + (index + 1);
@@ -122,7 +123,7 @@ function showHints() {
     hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
-    // Show/hide on checkbox
+    // Show/hide hint on checkbox toggle
     checkbox.addEventListener("change", () => {
       hintDiv.style.display = checkbox.checked ? "block" : "none";
     });
@@ -133,6 +134,7 @@ function showHints() {
     hintsBox.appendChild(hintDiv);
   });
 }
+
 
 
 
