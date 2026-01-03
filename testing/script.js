@@ -43,17 +43,35 @@ function mergeFlashcards(target, source) {
 function loadRandomCard() {
   if (!flashcardsData || Object.keys(flashcardsData).length === 0) return;
 
-  let newIndex;
-  let X, Y, Z, W, cards;
+  const activeFilters = getActiveIndexFilters();
+
+  let attempts = 0;
+  let newIndex, X, Y, Z, W, cards;
 
   do {
     X = randomKey(flashcardsData);
     Y = randomKey(flashcardsData[X]);
     Z = randomKey(flashcardsData[X][Y]);
     cards = flashcardsData[X][Y][Z];
+
     W = Math.floor(Math.random() * cards.length);
     newIndex = `${X}.${Y}.${Z}.${W + 1}`;
-  } while (newIndex === lastIndex && cards.length > 1);
+
+    attempts++;
+
+    // If filters exist, enforce prefix match
+    if (activeFilters.length > 0) {
+      const prefix = `${X}.${Y}.${Z}`;
+      const matches = activeFilters.some(f => prefix === f);
+      if (!matches) continue;
+    }
+
+    // Avoid immediate repeat
+    if (newIndex === lastIndex && cards.length > 1) continue;
+
+    break;
+
+  } while (attempts < 100);
 
   currentCard = cards[W];
   currentIndex = newIndex;
@@ -68,6 +86,7 @@ function loadRandomCard() {
   renderMath();
   resetNextButton();
 }
+
 
 
 // Show answer
@@ -139,5 +158,17 @@ function toggleFilter() {
   body.style.display = body.style.display === "block" ? "none" : "block";
 }
 
+function getActiveIndexFilters() {
+  const checkboxes = document.querySelectorAll(".index-filter:checked");
+  return Array.from(checkboxes).map(cb => cb.value);
+}
+
+
+document.querySelectorAll(".index-filter").forEach(cb => {
+  cb.addEventListener("change", () => {
+    resetNextButton();
+    loadRandomCard();
+  });
+});
 
 loadAllFlashcards();
