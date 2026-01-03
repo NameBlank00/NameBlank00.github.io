@@ -90,18 +90,9 @@ function loadRandomCard() {
 
 
 // Show answer
-function showAnswer() {
-  if (!currentCard) return;
-  const box = document.getElementById("answer");
-  box.innerHTML = currentCard.answer;
-  box.style.display = "block";
-  renderMath();
-}
-
-// ✅ NEW: Show hints
 function showHints() {
   const hintsBox = document.getElementById("hints");
-  hintsBox.innerHTML = ""; // clear previous
+  hintsBox.innerHTML = ""; // clear previous hints
 
   if (!currentCard || !currentCard.hints || currentCard.hints.length === 0) {
     hintsBox.style.display = "none";
@@ -110,21 +101,20 @@ function showHints() {
 
   hintsBox.style.display = "block";
 
-  currentCard.hints.forEach((hintText, index) => {
-    // Preview label (first 35 chars + ellipsis if too long)
-    const preview = hintText.length > 35 ? hintText.slice(0, 35) + "..." : hintText;
+  currentCard.hints.forEach((hintArray, index) => {
+    const hintText = hintArray.join(" "); // combine if multiple sentences
 
-    // Create checkbox
+    // Checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "hint-" + index;
 
-    // Label with preview
+    // Label
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
-    label.textContent = preview;
+    label.textContent = "Hint #" + (index + 1);
 
-    // Hint text div (hidden by default)
+    // Hint div (hidden by default)
     const hintDiv = document.createElement("div");
     hintDiv.textContent = hintText;
     hintDiv.style.display = "none";
@@ -132,7 +122,7 @@ function showHints() {
     hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
-    // Show/hide hint on checkbox toggle
+    // Show/hide on checkbox
     checkbox.addEventListener("change", () => {
       hintDiv.style.display = checkbox.checked ? "block" : "none";
     });
@@ -143,6 +133,7 @@ function showHints() {
     hintsBox.appendChild(hintDiv);
   });
 }
+
 
 
 
