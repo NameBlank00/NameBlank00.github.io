@@ -87,6 +87,14 @@ function showHints() {
   }
 
   const box = document.getElementById("hints");
+
+  // Toggle OFF
+  if (box.style.display === "block") {
+    box.style.display = "none";
+    return;
+  }
+
+  // Toggle ON
   box.innerHTML =
     "<strong>Hints:</strong><ul>" +
     currentCard.hints.map(h => `<li>${h}</li>`).join("") +
@@ -95,6 +103,7 @@ function showHints() {
   box.style.display = "block";
   renderMath();
 }
+
 
 // MathJax rendering
 function renderMath() {
