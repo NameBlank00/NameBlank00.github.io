@@ -134,7 +134,10 @@ function randomKey(obj) {
 }
 
 
-
+function toggleFilter() {
+  const body = document.getElementById("filter-body");
+  body.style.display = body.style.display === "block" ? "none" : "block";
+}
 
 
 loadAllFlashcards();
