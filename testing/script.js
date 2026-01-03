@@ -189,47 +189,47 @@ document.querySelectorAll(".index-filter").forEach(cb => {
 
 
 
-currentCard.hints.forEach((hint, index) => {
-  const hintText = Array.isArray(hint) ? hint.join(" ") : hint;
+// currentCard.hints.forEach((hint, index) => {
+//   const hintText = Array.isArray(hint) ? hint.join(" ") : hint;
 
-  // Create a container div for each hint row
-  const hintRow = document.createElement("div");
-  hintRow.style.display = "flex";
-  hintRow.style.alignItems = "center";
-  hintRow.style.marginBottom = "5px";
+//   // Create a container div for each hint row
+//   const hintRow = document.createElement("div");
+//   hintRow.style.display = "flex";
+//   hintRow.style.alignItems = "center";
+//   hintRow.style.marginBottom = "5px";
 
-  // Checkbox
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.id = "hint-" + index;
+//   // Checkbox
+//   const checkbox = document.createElement("input");
+//   checkbox.type = "checkbox";
+//   checkbox.id = "hint-" + index;
 
-  // Label
-  const label = document.createElement("label");
-  label.htmlFor = "hint-" + index;
-  label.textContent = "Hint #" + (index + 1);
-  label.style.marginLeft = "8px";  // small spacing to the right of checkbox
+//   // Label
+//   const label = document.createElement("label");
+//   label.htmlFor = "hint-" + index;
+//   label.textContent = "Hint #" + (index + 1);
+//   label.style.marginLeft = "8px";  // small spacing to the right of checkbox
 
-  // Hint div (hidden initially)
-  const hintDiv = document.createElement("div");
-  hintDiv.textContent = hintText;
-  hintDiv.style.display = "none";
-  hintDiv.style.margin = "5px 0 10px 25px"; // indent below checkbox
-  hintDiv.style.color = "lightblue";
-  hintDiv.style.fontStyle = "italic";
+//   // Hint div (hidden initially)
+//   const hintDiv = document.createElement("div");
+//   hintDiv.textContent = hintText;
+//   hintDiv.style.display = "none";
+//   hintDiv.style.margin = "5px 0 10px 25px"; // indent below checkbox
+//   hintDiv.style.color = "lightblue";
+//   hintDiv.style.fontStyle = "italic";
 
-  // Show/hide hint on checkbox
-  checkbox.addEventListener("change", () => {
-    hintDiv.style.display = checkbox.checked ? "block" : "none";
-  });
+//   // Show/hide hint on checkbox
+//   checkbox.addEventListener("change", () => {
+//     hintDiv.style.display = checkbox.checked ? "block" : "none";
+//   });
 
-  // Append checkbox and label to row
-  hintRow.appendChild(checkbox);
-  hintRow.appendChild(label);
+//   // Append checkbox and label to row
+//   hintRow.appendChild(checkbox);
+//   hintRow.appendChild(label);
 
-  // Append row and hint text div to hints box
-  hintsBox.appendChild(hintRow);
-  hintsBox.appendChild(hintDiv);
-});
+//   // Append row and hint text div to hints box
+//   hintsBox.appendChild(hintRow);
+//   hintsBox.appendChild(hintDiv);
+// });
 
 
 loadAllFlashcards();
