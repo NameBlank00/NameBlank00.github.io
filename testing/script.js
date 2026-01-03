@@ -99,6 +99,13 @@ function showAnswer() {
 // Show answer
 function showHints() {
   const hintsBox = document.getElementById("hints");
+
+  // Toggle display
+  if (hintsBox.style.display === "block") {
+    hintsBox.style.display = "none";
+    return;
+  }
+
   hintsBox.innerHTML = ""; // clear previous hints
 
   if (!currentCard || !currentCard.hints || currentCard.hints.length === 0) {
@@ -109,37 +116,49 @@ function showHints() {
   hintsBox.style.display = "block";
 
   currentCard.hints.forEach((hintArray, index) => {
-    const hintText = hintArray.join(" "); // combine if multiple sentences
+    const hintText = Array.isArray(hintArray) ? hintArray.join(" ") : hintArray;
+
+    // Container div to hold checkbox + label horizontally
+    const hintRow = document.createElement("div");
+    hintRow.style.display = "flex";
+    hintRow.style.alignItems = "center";
+    hintRow.style.marginBottom = "5px";
 
     // Checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "hint-" + index;
 
-    // Label
+    // Label to the right
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
     label.textContent = "Hint #" + (index + 1);
+    label.style.marginLeft = "8px"; // space between checkbox and text
+    label.style.cursor = "pointer";
 
-    // Hint div (hidden by default)
+    // Hint div (hidden initially)
     const hintDiv = document.createElement("div");
     hintDiv.textContent = hintText;
     hintDiv.style.display = "none";
-    hintDiv.style.margin = "5px 0 10px 20px";
+    hintDiv.style.margin = "5px 0 10px 25px"; // indent
     hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
-    // Show/hide on checkbox
+    // Show/hide hint when checkbox toggled
     checkbox.addEventListener("change", () => {
       hintDiv.style.display = checkbox.checked ? "block" : "none";
     });
 
-    // Append to hints box
-    hintsBox.appendChild(checkbox);
-    hintsBox.appendChild(label);
+    // Append checkbox and label to row
+    hintRow.appendChild(checkbox);
+    hintRow.appendChild(label);
+
+    // Append row and hint div to hintsBox
+    hintsBox.appendChild(hintRow);
     hintsBox.appendChild(hintDiv);
   });
 }
+
 
 
 
