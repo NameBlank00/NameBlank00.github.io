@@ -108,6 +108,17 @@ button:hover {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
+#hints label {
+  margin-left: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+#hints input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-right: 5px;
+}
+
 body.light-mode #hints,
 body.light-mode #answer {
   background-color: #f9f9f9;
@@ -197,32 +208,32 @@ body.light-mode .filter-column {
 
 /* Smooth transition for body */
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 1.5s ease, color 1.5s ease;
 }
 
 /* Smooth transition for the main container */
 .main-container {
-  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  transition: background-color 1.5s ease, color 1.5s ease, box-shadow 1.5s ease;
 }
 
 /* Flashcard box transition */
 .card {
-  transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+  transition: background-color 1.5s ease, border 1.5s ease, color 1.5s ease;
 }
 
 /* Hints and answer boxes */
 #hints, #answer {
-  transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+  transition: background-color 1.5s ease, border 1.5s ease, color 1.5s ease;
 }
 
 /* Buttons transition */
 button {
-  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.2s ease;
+  transition: background-color 1.5s ease, color 1.5s ease, opacity 0.2s ease;
 }
 
 /* Filter headers & columns */
 .filter-section-header, 
 .filter-column, 
 .column-title {
-  transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
+  transition: background-color 1.5s ease, color 1.5s ease, border 1.5s ease;
 }
