@@ -69,6 +69,58 @@
 
 <h1>Flash Cards 1</h1>
 
+
+<!-- Index Filter Dropdown -->
+<div class="filter-container">
+
+  <div class="filter-header" onclick="toggleFilter()">
+    <span>Filter by Index (X.Y.Z)</span>
+    <span class="arrow">▼</span>
+  </div>
+
+  <div class="filter-body" id="filter-body">
+
+    <!-- Group X = 1 -->
+    <div class="filter-group">
+      <strong>1.x.x</strong><br>
+
+      <label>
+        <input type="checkbox" class="index-filter" value="1.1.1">
+        1.1.1
+      </label><br>
+
+      <label>
+        <input type="checkbox" class="index-filter" value="1.1.2">
+        1.1.2
+      </label><br>
+
+      <label>
+        <input type="checkbox" class="index-filter" value="1.2.1">
+        1.2.1
+      </label>
+    </div>
+
+    <hr>
+
+    <!-- Group X = 2 -->
+    <div class="filter-group">
+      <strong>2.x.x</strong><br>
+
+      <label>
+        <input type="checkbox" class="index-filter" value="2.1.1">
+        2.1.1
+      </label><br>
+
+      <label>
+        <input type="checkbox" class="index-filter" value="2.2.1">
+        2.2.1
+      </label>
+    </div>
+
+  </div>
+</div>
+
+
 <div id="statement-box" class="card">
   <span id="card-index" class="card-index"></span>
   <div id="card-text"></div>
