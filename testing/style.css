@@ -120,3 +120,75 @@ body.light-mode #answer {
   font-size: 18px;
   line-height: 1.5;
 }
+
+
+/* --- Filter container --- */
+.filter-section-container {
+  width: 100%;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.filter-section-header {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff; /* blue underline */
+  padding: 5px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+body.dark-mode .filter-section-header {
+  color: #fff;
+}
+
+body.light-mode .filter-section-header {
+  color: #000;
+}
+
+.arrow {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* --- Collapsible body --- */
+.filter-body {
+  display: none;
+  padding: 10px 0 0 0;
+}
+
+.filter-row {
+  display: flex;
+  gap: 25px;
+}
+
+.filter-column {
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 120px;
+}
+
+body.light-mode .filter-column {
+  border: 1px solid #ccc;
+}
+
+.column-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #007bff; /* blue */
+}
+
+/* --- Checkbox styling --- */
+.filter-column label {
+  display: block;
+  margin: 4px 0;
+  font-size: 14px;
+}
