@@ -17,6 +17,7 @@
         {
           "statement": "What is the formula for the area of a circle?",
           "answer": "The area is $A = \\pi r^2$.",
+          "hints": ["Remember $\\pi$ is approximately 3.14159"],
           "tags": ["math", "geometry"]
         },
         {
