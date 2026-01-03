@@ -87,7 +87,14 @@ function loadRandomCard() {
   resetNextButton();
 }
 
-
+// Show answer
+function showAnswer() {
+  if (!currentCard) return;
+  const box = document.getElementById("answer");
+  box.innerHTML = currentCard.answer;
+  box.style.display = "block";
+  renderMath();
+}
 
 // Show answer
 function showHints() {
@@ -101,16 +108,15 @@ function showHints() {
 
   hintsBox.style.display = "block";
 
-  currentCard.hints.forEach((hint, index) => {
-    // hintText is hint itself if string, or join if it's an array
-    const hintText = Array.isArray(hint) ? hint.join(" ") : hint;
+  currentCard.hints.forEach((hintArray, index) => {
+    const hintText = hintArray.join(" "); // combine if multiple sentences
 
     // Checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = "hint-" + index;
 
-    // Label: Hint #
+    // Label
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
     label.textContent = "Hint #" + (index + 1);
@@ -123,7 +129,7 @@ function showHints() {
     hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
-    // Show/hide hint on checkbox toggle
+    // Show/hide on checkbox
     checkbox.addEventListener("change", () => {
       hintDiv.style.display = checkbox.checked ? "block" : "none";
     });
@@ -134,7 +140,6 @@ function showHints() {
     hintsBox.appendChild(hintDiv);
   });
 }
-
 
 
 
@@ -186,50 +191,5 @@ document.querySelectorAll(".index-filter").forEach(cb => {
     loadRandomCard();
   });
 });
-
-
-
-// currentCard.hints.forEach((hint, index) => {
-//   const hintText = Array.isArray(hint) ? hint.join(" ") : hint;
-
-//   // Create a container div for each hint row
-//   const hintRow = document.createElement("div");
-//   hintRow.style.display = "flex";
-//   hintRow.style.alignItems = "center";
-//   hintRow.style.marginBottom = "5px";
-
-//   // Checkbox
-//   const checkbox = document.createElement("input");
-//   checkbox.type = "checkbox";
-//   checkbox.id = "hint-" + index;
-
-//   // Label
-//   const label = document.createElement("label");
-//   label.htmlFor = "hint-" + index;
-//   label.textContent = "Hint #" + (index + 1);
-//   label.style.marginLeft = "8px";  // small spacing to the right of checkbox
-
-//   // Hint div (hidden initially)
-//   const hintDiv = document.createElement("div");
-//   hintDiv.textContent = hintText;
-//   hintDiv.style.display = "none";
-//   hintDiv.style.margin = "5px 0 10px 25px"; // indent below checkbox
-//   hintDiv.style.color = "lightblue";
-//   hintDiv.style.fontStyle = "italic";
-
-//   // Show/hide hint on checkbox
-//   checkbox.addEventListener("change", () => {
-//     hintDiv.style.display = checkbox.checked ? "block" : "none";
-//   });
-
-//   // Append checkbox and label to row
-//   hintRow.appendChild(checkbox);
-//   hintRow.appendChild(label);
-
-//   // Append row and hint text div to hints box
-//   hintsBox.appendChild(hintRow);
-//   hintsBox.appendChild(hintDiv);
-// });
-
 
 loadAllFlashcards();
