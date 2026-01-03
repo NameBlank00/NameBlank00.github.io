@@ -100,28 +100,47 @@ function showAnswer() {
 
 // ✅ NEW: Show hints
 function showHints() {
+  const hintsBox = document.getElementById("hints");
+  hintsBox.innerHTML = ""; // clear previous
+
   if (!currentCard || !currentCard.hints || currentCard.hints.length === 0) {
-    alert("No hints available.");
+    hintsBox.style.display = "none";
     return;
   }
 
-  const box = document.getElementById("hints");
+  hintsBox.style.display = "block";
 
-  // Toggle OFF
-  if (box.style.display === "block") {
-    box.style.display = "none";
-    return;
-  }
+  currentCard.hints.forEach((hintText, index) => {
+    // Create checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = "hint-" + index;
 
-  // Toggle ON
-  box.innerHTML =
-    "<strong>Hints:</strong><ul>" +
-    currentCard.hints.map(h => `<li>${h}</li>`).join("") +
-    "</ul>";
+    // Label
+    const label = document.createElement("label");
+    label.htmlFor = "hint-" + index;
+    label.textContent = "Hint " + (index + 1);
 
-  box.style.display = "block";
-  renderMath();
+    // Hint text div
+    const hintDiv = document.createElement("div");
+    hintDiv.textContent = hintText;
+    hintDiv.style.display = "none";
+    hintDiv.style.margin = "5px 0 10px 20px"; // indent
+    hintDiv.style.color = "lightblue"; // optional color
+    hintDiv.style.fontStyle = "italic";
+
+    // Show/hide on checkbox change
+    checkbox.addEventListener("change", () => {
+      hintDiv.style.display = checkbox.checked ? "block" : "none";
+    });
+
+    // Append to hints box
+    hintsBox.appendChild(checkbox);
+    hintsBox.appendChild(label);
+    hintsBox.appendChild(hintDiv);
+  });
 }
+
 
 
 // MathJax rendering
