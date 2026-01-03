@@ -32,6 +32,14 @@
           "hints": ["Energy equals mass times the speed of light squared"],
           "tags": ["physics"]
         }
+      ],
+      "2": [
+        {
+          "statement": "State Einstein's mass-energy equivalence formula.",
+          "answer": "The famous formula is $E = mc^2$.",
+          "hints": ["Energy equals mass times the speed of light squared"],
+          "tags": ["physics"]
+        }
       ]
     }
   }
