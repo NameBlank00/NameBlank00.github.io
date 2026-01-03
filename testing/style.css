@@ -1,0 +1,122 @@
+/* --- Basic Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Body Background --- */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* --- Page Title above the rectangle --- */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* --- Main container (centered rectangle with rounded edges) --- */
+.main-container {
+  background-color: #1c1c1c; /* dark rectangle */
+  border-radius: 25px;
+  padding: 30px;
+  width: 70%;
+  margin: 0 auto 50px auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+body.light-mode .main-container {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* --- Flashcard Box --- */
+.card {
+  position: relative;
+  background: #2b2b2b;
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+body.light-mode .card {
+  background: #f9f9f9;
+  border: 2px solid #ccc;
+}
+
+/* --- Card Index --- */
+.card-index {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+body.light-mode .card-index {
+  color: rgba(0,0,0,0.3);
+}
+
+/* --- Buttons --- */
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.2s;
+}
+
+body.dark-mode button {
+  background-color: #333;
+  color: #fff;
+}
+
+body.light-mode button {
+  background-color: #ddd;
+  color: #000;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* --- Hints & Answer Boxes --- */
+#hints, #answer {
+  width: 100%;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  background-color: #2b2b2b;
+  display: none;
+  text-align: left;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+body.light-mode #hints,
+body.light-mode #answer {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* --- MathJax rendering inside boxes --- */
+#card-text, #answer, #hints {
+  font-size: 18px;
+  line-height: 1.5;
+}
