@@ -2,6 +2,8 @@ let flashcardsData = {};
 let currentCard = null;
 let currentIndex = "";
 
+let lastIndex = null;
+
 let confirmNextClick = false;
 
 // Load the manifest first, then load all files listed in it
@@ -36,26 +38,37 @@ function mergeFlashcards(target, source) {
   }
 }
 
-// Load a random card
-function loadRandomCard() {
-  const X = randomKey(flashcardsData);
-  const Y = randomKey(flashcardsData[X]);
-  const Z = randomKey(flashcardsData[X][Y]);
-  const cards = flashcardsData[X][Y][Z];
 
-  const W = Math.floor(Math.random() * cards.length);
+
+function loadRandomCard() {
+  if (!flashcardsData || Object.keys(flashcardsData).length === 0) return;
+
+  let newIndex;
+  let X, Y, Z, W, cards;
+
+  do {
+    X = randomKey(flashcardsData);
+    Y = randomKey(flashcardsData[X]);
+    Z = randomKey(flashcardsData[X][Y]);
+    cards = flashcardsData[X][Y][Z];
+    W = Math.floor(Math.random() * cards.length);
+    newIndex = `${X}.${Y}.${Z}.${W + 1}`;
+  } while (newIndex === lastIndex && cards.length > 1);
+
   currentCard = cards[W];
-  currentIndex = `${X}.${Y}.${Z}.${W + 1}`;
+  currentIndex = newIndex;
+  lastIndex = newIndex;
 
   document.getElementById("card-text").innerHTML = currentCard.statement;
   document.getElementById("card-index").textContent = currentIndex;
 
   document.getElementById("answer").style.display = "none";
-  document.getElementById("hints").style.display = "none"; // NEW
+  document.getElementById("hints").style.display = "none";
 
   renderMath();
   resetNextButton();
 }
+
 
 // Show answer
 function showAnswer() {
