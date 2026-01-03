@@ -96,6 +96,9 @@ function showAnswer() {
   renderMath();
 }
 
+
+
+
 // Show answer
 function showHints() {
   const hintsBox = document.getElementById("hints");
@@ -115,10 +118,26 @@ function showHints() {
 
   hintsBox.style.display = "block";
 
-  currentCard.hints.forEach((hintArray, index) => {
-    const hintText = Array.isArray(hintArray) ? hintArray.join(" ") : hintArray;
+  // Loop through main hints array
+  currentCard.hints.forEach((hintItem, index) => {
+    let hintText;
 
-    // Container div to hold checkbox + label horizontally
+    // hintItem can be:
+    // 1) string -> single hint
+    // 2) array of strings -> join
+    // 3) array of arrays -> join inner arrays
+    if (typeof hintItem === "string") {
+      hintText = hintItem;
+    } else if (Array.isArray(hintItem) && hintItem.every(h => typeof h === "string")) {
+      hintText = hintItem.join(" ");
+    } else if (Array.isArray(hintItem) && hintItem.every(h => Array.isArray(h))) {
+      // array of arrays
+      hintText = hintItem.map(inner => inner.join(" ")).join(" ");
+    } else {
+      hintText = String(hintItem); // fallback
+    }
+
+    // Container div for checkbox + label
     const hintRow = document.createElement("div");
     hintRow.style.display = "flex";
     hintRow.style.alignItems = "center";
@@ -133,14 +152,14 @@ function showHints() {
     const label = document.createElement("label");
     label.htmlFor = "hint-" + index;
     label.textContent = "Hint #" + (index + 1);
-    label.style.marginLeft = "8px"; // space between checkbox and text
+    label.style.marginLeft = "8px";
     label.style.cursor = "pointer";
 
     // Hint div (hidden initially)
     const hintDiv = document.createElement("div");
     hintDiv.textContent = hintText;
     hintDiv.style.display = "none";
-    hintDiv.style.margin = "5px 0 10px 25px"; // indent
+    hintDiv.style.margin = "5px 0 10px 25px"; // indent below checkbox
     hintDiv.style.color = "lightblue";
     hintDiv.style.fontStyle = "italic";
 
@@ -153,11 +172,12 @@ function showHints() {
     hintRow.appendChild(checkbox);
     hintRow.appendChild(label);
 
-    // Append row and hint div to hintsBox
+    // Append row and hint div to hints box
     hintsBox.appendChild(hintRow);
     hintsBox.appendChild(hintDiv);
   });
 }
+
 
 
 
