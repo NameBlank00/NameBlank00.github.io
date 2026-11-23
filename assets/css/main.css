@@ -455,7 +455,7 @@ input[type="radio"] {
     input[type="radio"] + label:before {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      font-family: 'Font Awesome 5 Free';
+      font-family: 'FontAwesome';
       font-style: normal;
       font-weight: normal;
       text-transform: none !important; }
@@ -1724,7 +1724,7 @@ ul.actions {
   .icon:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'FontAwesome';
     font-style: normal;
     font-weight: normal;
     text-transform: none !important; }
@@ -2449,7 +2449,7 @@ body {
       #header > nav > a[href="#menu"]:before {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
-        font-family: 'Font Awesome 5 Free';
+        font-family: 'FontAwesome';
         font-style: normal;
         font-weight: normal;
         text-transform: none !important; }
@@ -2797,7 +2797,7 @@ body {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       content: '\f00d';
-      font-family: 'Font Awesome 5 Free';
+      font-family: 'FontAwesome';
       font-style: normal;
       font-weight: normal;
       text-transform: none !important;

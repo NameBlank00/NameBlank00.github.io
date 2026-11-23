@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40">
+  <!-- Mask: area below the vertically flipped photon wave -->
+  <path d="M0 40 L0 20 Q37.5 50 75 20 T150 20 L150 40 Z" fill="#000"/>
+</svg>

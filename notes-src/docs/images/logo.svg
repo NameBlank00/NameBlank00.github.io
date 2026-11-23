@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   x="0"
+   y="0"
+   width="265"
+   height="260"
+   style="fill:none"
+   version="1.1"
+   id="svg20"
+   sodipodi:docname="diagram-20250204.svg"
+   inkscape:version="1.3.1 (9b9bdc1480, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4483697"
+     inkscape:cx="287.90992"
+     inkscape:cy="150.51406"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="66"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g15" />
+  <svg
+     class="role-diagram-draw-area"
+     version="1.1"
+     id="svg18"
+     width="100%"
+     height="100%">
+    <g
+       class="shapes-region"
+       style="fill:none;stroke:#000000"
+       id="g15">
+      <g
+         class="grouped-shape"
+         id="g3"
+         transform="translate(-178.40047,-8.3845452)">
+        <g
+           class="composite-shape"
+           id="g1">
+          <path
+             class="real"
+             d="m 223.71,159.77 h 11.59 l 65.93,64.18 v -20.64 h 9.22 v 37.99 0 23.34 L 289.38,243.7 v -11.63 l -62.15,-60.49 h -11.59 l -35.71,-34.76 h 79.46 v 3.97 h -55.18 z"
+             style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+             id="path1" />
+        </g>
+        <g
+           class="composite-shape"
+           id="g2">
+          <path
+             class="real"
+             d="m 271.13,182.16 -25.08,-24.42 v -8.45 h 8.64 l 12.83,12.71 25.08,24.41 v 0 8.45 h -8.63 z"
+             style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+             id="path2" />
+        </g>
+      </g>
+      <g
+         class="grouped-shape"
+         id="g6"
+         transform="translate(-178.40047,-8.3845452)">
+        <g
+           class="composite-shape"
+           id="g4">
+          <path
+             class="real"
+             d="m 396.23,159.77 h -11.6 l -65.93,64.18 v -20.64 h -9.21 v 37.99 0 23.34 l 21.07,-20.94 v -11.63 l 62.14,-60.49 h 11.6 L 440,136.82 h -79.46 v 3.97 h 55.18 z"
+             style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+             id="path3" />
+        </g>
+        <g
+           class="composite-shape"
+           id="g5">
+          <path
+             class="real"
+             d="m 348.8,182.16 25.08,-24.42 v -8.45 h -8.63 L 352.41,162 327.33,186.41 v 0 8.45 h 8.64 z"
+             style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+             id="path4" />
+        </g>
+      </g>
+      <g
+         class="grouped-shape"
+         id="g13"
+         transform="translate(-178.40047,-8.3845452)">
+        <g
+           class="grouped-shape"
+           id="g9">
+          <g
+             class="composite-shape"
+             id="g7">
+            <path
+               class="real"
+               d="m 396.23,114.87 h -11.6 L 318.7,50.69 v 20.64 h -9.21 v -37.99 0 V 10 l 21.07,20.94 v 11.63 l 62.14,60.5 h 11.6 l 35.7,34.75 h -79.46 v -3.97 h 55.18 z"
+               style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+               id="path6" />
+          </g>
+          <g
+             class="composite-shape"
+             id="g8">
+            <path
+               class="real"
+               d="m 348.8,92.49 25.08,24.41 v 8.45 h -8.63 L 352.41,112.64 327.33,88.23 v 0 -8.45 h 8.64 z"
+               style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+               id="path7" />
+          </g>
+        </g>
+        <g
+           class="grouped-shape"
+           id="g12">
+          <g
+             class="composite-shape"
+             id="g10">
+            <path
+               class="real"
+               d="m 223.71,114.87 h 11.59 l 65.93,-64.18 v 20.64 h 9.22 v -37.99 0 V 10 l -21.07,20.94 v 11.63 l -62.15,60.5 h -11.59 l -35.71,34.75 h 79.46 v -3.97 h -55.18 z"
+               style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+               id="path9" />
+          </g>
+          <g
+             class="composite-shape"
+             id="g11">
+            <path
+               class="real"
+               d="m 271.13,92.49 -25.08,24.41 v 8.45 h 8.64 l 12.83,-12.71 25.08,-24.41 v 0 -8.45 h -8.63 z"
+               style="fill:#d0021b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-opacity:1"
+               id="path10" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="g14" />
+    </g>
+    <g
+       id="g16" />
+    <g
+       id="g17" />
+    <g
+       id="g18" />
+  </svg>
+  <svg
+     width="660"
+     height="300"
+     style="font-family:Asana-Math, Asana"
+     version="1.1"
+     id="svg19" />
+</svg>

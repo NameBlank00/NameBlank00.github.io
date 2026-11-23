@@ -4,74 +4,84 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html>
+<html lang="en">
 	<head>
-		<title>NameBlank00</title>
+		<title>Jonathan A. Gonzales · NameBlank00</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Jonathan A. Gonzales: physics and mathematics, research interests in theoretical high-energy physics, and course-style notes on mathematics and physics." />
+		<meta name="author" content="Jonathan A. Gonzales" />
+		<meta property="og:title" content="Jonathan A. Gonzales · NameBlank00" />
+		<meta property="og:description" content="Research interests and notes on mathematics and physics." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://nameblank00.github.io/" />
+		<link rel="icon" type="image/svg+xml" href="images/diagram-20250204.svg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			:root { --uh-red: #C8102E; }
+
+			#header { border-bottom: 5px solid var(--uh-red); }
+			#header .brand { float: left; display: flex; align-items: center; gap: 0.5em; margin-left: 8px; height: 100%; }
+			#header .brand img { width: 0.8cm; }
+			#header .brand a { color: #fff; text-decoration: none; font-size: 0.6cm; }
+
+			#banner { background-image: url(images/sum-of-n-numbers-gauss-animation.gif); }
+
+			/* Feynman-diagram dividers (images/*.svg), each centered on the boundary between two sections */
+			.particle { position: relative; z-index: 50; height: 0; }
+			.particle::before {
+				content: ""; position: absolute; left: 0; right: 0;
+				height: var(--h); top: calc(var(--h) / -2);
+				background: var(--img) repeat-x center;
+				pointer-events: none;
+			}
+			.particle.flip::before { transform: scaleY(-1); }
+			.particle.higgs  { --img: url(images/higgs.svg);  --h: 14px; }
+			.particle.photon { --img: url(images/photon.svg); --h: 40px; }
+			.particle.gluon  { --img: url(images/gluon.svg);  --h: 74px; }
+
+			/* Wavy section edges: the band reaches half a tile past the boundary and is masked to the
+			   shape of the particle line (images/*-mask.svg), so no straight edge shows between waves. */
+			.edge-t, .edge-b { position: relative; z-index: 5; background-origin: border-box; }
+			.edge-b {
+				border-bottom: calc(var(--bh) / 2) solid transparent; margin-bottom: calc(var(--bh) / -2);
+				-webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--bh) + 1px) no-repeat,
+				              var(--bm) center bottom / var(--bw) var(--bh) repeat-x;
+				        mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--bh) + 1px) no-repeat,
+				              var(--bm) center bottom / var(--bw) var(--bh) repeat-x;
+			}
+			.edge-t {
+				border-top: calc(var(--th) / 2) solid transparent; margin-top: calc(var(--th) / -2);
+				-webkit-mask: var(--tm) center top / var(--tw) var(--th) repeat-x,
+				              linear-gradient(#000 0 0) 0 100% / 100% calc(100% - var(--th) + 1px) no-repeat;
+				        mask: var(--tm) center top / var(--tw) var(--th) repeat-x,
+				              linear-gradient(#000 0 0) 0 100% / 100% calc(100% - var(--th) + 1px) no-repeat;
+			}
+			.edge-t.edge-b {
+				-webkit-mask: var(--tm) center top / var(--tw) var(--th) repeat-x,
+				              linear-gradient(#000 0 0) 0 calc(var(--th) - 1px) / 100% calc(100% - var(--th) - var(--bh) + 2px) no-repeat,
+				              var(--bm) center bottom / var(--bw) var(--bh) repeat-x;
+				        mask: var(--tm) center top / var(--tw) var(--th) repeat-x,
+				              linear-gradient(#000 0 0) 0 calc(var(--th) - 1px) / 100% calc(100% - var(--th) - var(--bh) + 2px) no-repeat,
+				              var(--bm) center bottom / var(--bw) var(--bh) repeat-x;
+			}
+			.photon-b { --bm: url(images/photon-mask.svg);      --bw: 150px; --bh: 40px; }
+			.photon-t { --tm: url(images/photon-mask-flip.svg); --tw: 150px; --th: 40px; }
+			.gluon-b  { --bm: url(images/gluon-mask.svg);       --bw: 102px; --bh: 74px; }
+			.gluon-t  { --tm: url(images/gluon-mask-flip.svg);  --tw: 102px; --th: 74px; }
+
+			.portrait { display: block; margin: 0 auto; width: 100%; max-width: 256px; border-radius: 50%; }
+			.interests { margin-top: 1em; }
+		</style>
 	</head>
-
-    <style>
-        /* Popup styles */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Ensure it's on top */
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .popup h2 {
-            margin-bottom: 20px;
-        }
-
-        .popup button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .popup button:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-
-
-
-
-
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header" style="border-bottom-color: #C8102E;border-bottom-width: 5px;border-bottom-style: solid;">
-				
-				<div style="display:inline; float: left;">
-					<img src="images/diagram-20250204.svg" alt="img" style="width: 0.8cm;vertical-align: middle;margin-left: 8px;"/>
-					<a class="logo" style="color:white; text-decoration:none;font-size:0.6cm;vertical-align:middle" href="index.html">NameBlank00</a>
+			<header id="header">
+				<div class="brand">
+					<img src="images/diagram-20250204.svg" alt="" />
+					<a class="logo" href="index.html">NameBlank00</a>
 				</div>
-				
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -81,173 +91,159 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#research">Research</a></li>
+					<li><a href="notes/">Notes</a></li>
+					<li><a href="notes/textbooks/">Textbooks</a></li>
+					<li><a href="https://github.com/NameBlank00">GitHub</a></li>
 				</ul>
 			</nav>
 
 		<!-- Banner -->
-			<section id="banner" style="background-image: url(images/sum-of-n-numbers-gauss-animation.gif);z-index: -12;">
+			<section id="banner">
 				<div class="inner">
-					<h1>Jonathan Gonzales</h1>
-					<p>A responsive business oriented template with a video background<br />
-					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
+					<h1>Jonathan A. Gonzales</h1>
+					<p>Physics &amp; Mathematics · University of Houston<br />
+					Theoretical high-energy physics and the mathematics behind it.</p>
 				</div>
 			</section>
 
+			<div class="particle higgs" aria-hidden="true"></div>
 
-			<div style="margin-top:-7.5px;border-bottom: dashed 15px #C8102E;background-color: transparent;z-index: 12;">
-				</div>
-
-				
-
-								
-		<!-- Highlights -->
-			<section class="wrapper tree">
+		<!-- About -->
+			<section id="about" class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Introductions</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<h2>About Me</h2>
+						<p>Physics and mathematics graduate of the University of Houston.</p>
 					</header>
 					<div class="row">
 						<div class="col-6 col-12-medium">
-								<h2>Title</h2>
-								<hr>
-							<p>penus</p>
-							</div>
-						
-						<div class="col-6 col-12-medium" >
-							<img src="images/pic01.jpg" style="display: block;	margin-left: auto;margin-right: auto;clip-path: circle();border-radius: 50%;">
-						</div>	
+							<h3>Hi, I'm Jonathan</h3>
+							<hr />
+							<p>As an undergraduate researcher I studied how resonance decays affect the susceptibilities of conserved quantities, and compared the results with published experimental data.</p>
+							<p>My main interest is theoretical physics, especially theoretical high-energy physics, along with quantum information theory.</p>
+						</div>
+						<div class="col-6 col-12-medium">
+							<img class="portrait" src="images/profile.jpg" alt="Close-up photo of a calico cat" />
+						</div>
 					</div>
 				</div>
 			</section>
 
-			
-			<div style="margin-bottom:-7.5px;border-bottom: dashed 15px #C8102E;background-color: transparent;z-index: 12;"> </div>
-
+			<div class="particle higgs" aria-hidden="true"></div>
 
 		<!-- CTA -->
-			<section id="cta" class="wrapper" style="z-index: -1;">
+			<section id="cta" class="wrapper edge-b photon-b">
 				<div class="inner">
-					<h2>Curabitur ullamcorper ultricies</h2>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+					<h2>Mathematics is the language; physics is the story.</h2>
+					<p>This site collects what I'm studying and working on: research interests, a reading list of textbooks, and course-style notes running from the foundations of mathematics to quantum field theory.</p>
 				</div>
 			</section>
 
+			<div class="particle photon" aria-hidden="true"></div>
 
-			<div style="background:url(images/photon.png); position:relative; z-index: 100; height:80px; margin-top: -31px; transform: scaleX(1) scaleY(1);"> </div>
-
-
-		<!-- Highlights -->
-			<section class="wrapper" style="z-index: 2;">
+		<!-- Research -->
+			<section id="research" class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Publications and Research Topics</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<h2>Research Interests</h2>
+						<p>Modeling the thermodynamic behavior of Quantum Chromodynamics, and the mathematical structures that make physical theories precise.</p>
 					</header>
 					<div class="highlights">
-						<section id="main">
+						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
-									<h3>Research Publications & Interests</h3>
+									<span class="icon fa-bolt" aria-hidden="true"></span>
+									<h3>Particle Physics</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+								<p>The fundamental particles and their interactions across energies, temperatures and densities, from collider experiments to the early Universe.</p>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
-									<h3>Research Related Notes</h3>
+									<span class="icon fa-fire" aria-hidden="true"></span>
+									<h3>QCD Thermodynamics</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								
-								<ul class="actions fit">
-									<li><a href="general_notes/home.html" class="button primary fit"> Research Notes </a></li>
+								<p>Susceptibilities of conserved charges and the role of resonance decays, using approaches such as:</p>
+								<ul class="alt interests">
+									<li>Lattice QCD</li>
+									<li>Hadron Resonance Gas model</li>
+									<li>Nambu–Jona-Lasinio model</li>
+									<li>Holographic models</li>
 								</ul>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
-									<h3>About Me</h3>
+									<span class="icon fa-superscript" aria-hidden="true"></span>
+									<h3>Mathematical Physics</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+								<p>New physics motivates new mathematics, and that mathematics in turn gives physics a rigorous framework and new insight. I'm also interested in quantum information theory.</p>
 							</div>
 						</section>
 					</div>
 				</div>
 			</section>
 
-			<div style="background:url(images/photon.png); position:relative; z-index: 100; height:80px; margin-bottom: -31px; transform: scaleX(1) scaleY(-1);"> </div>
-
+			<div class="particle photon flip" aria-hidden="true"></div>
 
 		<!-- CTA -->
-			<section id="cta" class="wrapper" >
+			<section class="wrapper cta-band edge-t photon-t edge-b gluon-b" id="cta-notes" style="background: #111; color: rgba(255,255,255,0.75);">
 				<div class="inner">
-					<h2>Curabitur ullamcorper ultricies</h2>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+					<h2 style="color:#fff">Notes, organized like courses</h2>
+					<p>Each field is split into courses, and each course into chapters with Previous/Next navigation, full-text search and properly typeset math.</p>
+					<ul class="actions">
+						<li><a href="notes/" class="button primary">Open the notes</a></li>
+					</ul>
 				</div>
 			</section>
 
-			
-			<div style="background:url(images/gluon.png); position:relative; z-index: 100; height:100px; margin-top: -24px;"> </div>
+			<div class="particle gluon" aria-hidden="true"></div>
 
-
-		<!-- General Notes -->
-			<section class="wrapper">
+		<!-- Notes -->
+			<section id="notes" class="wrapper">
 				<div class="inner">
 					<header class="special">
 						<h2>Mathematics and Physics Notes</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<p>Some sections are still being written.</p>
 					</header>
-					<section id="main">
-						<div class="Content">								
-							<ul class="actions fit">
-								<li><a href="general_notes/home.html" class="button primary fit"> Go to Research Notes </a></li>
-							</ul>
-						</div>
-					</section>
 					<div class="highlights">
-						<section id="main">
+						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
+									<span class="icon fa-calculator" aria-hidden="true"></span>
 									<h3>Mathematics</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-
+								<p>Logic and set theory, algebra, analysis, topology, geometry, number theory and probability.</p>
 								<ul class="actions fit">
-									<li><a href="general_notes/Mathematics/Mathematics_Content.html" class="button primary fit"> Mathematics Notes </a></li>
+									<li><a href="notes/mathematics/" class="button primary fit">Mathematics Notes</a></li>
 								</ul>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<span class="icon fa-flask" aria-hidden="true"></span>
 									<h3>Physics</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								
+								<p>Classical mechanics, electromagnetism, thermodynamics, relativity, quantum theory and beyond the Standard Model.</p>
 								<ul class="actions fit">
-									<li><a href="general_notes/Physics/Physics_Content.html" class="button primary fit"> Physics Notes </a></li>
+									<li><a href="notes/physics/" class="button primary fit">Physics Notes</a></li>
 								</ul>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
+									<span class="icon fa-book" aria-hidden="true"></span>
 									<h3>Textbooks</h3>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								
+								<p>The books I use and recommend, starting with quantum field theory and particle physics.</p>
 								<ul class="actions fit">
-									<li><a href="general_notes/Textbooks.html" class="button primary fit"> Textbook List </a></li>
+									<li><a href="notes/textbooks/" class="button primary fit">Textbook List</a></li>
 								</ul>
 							</div>
 						</section>
@@ -255,38 +251,34 @@
 				</div>
 			</section>
 
-			
-			<div style="background:url(images/gluon.png); position:relative; z-index: 100; height:100px; margin-bottom: -24px; transform: scaleY(-1);"> </div>
+			<div class="particle gluon flip" aria-hidden="true"></div>
 
 		<!-- Footer -->
-			<footer id="footer">
+			<footer id="footer" class="edge-t gluon-t">
 				<div class="inner">
 					<div class="content">
 						<section>
-							<h3>Accumsan montes viverra</h3>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+							<h3>NameBlank00</h3>
+							<p>The personal site of Jonathan A. Gonzales: research interests and notes on mathematics and physics.</p>
 						</section>
 						<section>
-							<h4>Sem turpis amet semper</h4>
+							<h4>On this site</h4>
 							<ul class="alt">
-								<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-								<li><a href="#">Etiam vel lorem sed amet.</a></li>
-								<li><a href="#">Felis enim feugiat viverra.</a></li>
-								<li><a href="#">Dolor pulvinar magna etiam.</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#research">Research interests</a></li>
+								<li><a href="notes/">Notes</a></li>
+								<li><a href="general_notes/home.html">Archived notes (old site)</a></li>
 							</ul>
 						</section>
 						<section>
-							<h4>Magna sed ipsum</h4>
+							<h4>Elsewhere</h4>
 							<ul class="plain">
-								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+								<li><a href="https://github.com/NameBlank00"><i class="icon fa-github">&nbsp;</i>GitHub</a></li>
 							</ul>
 						</section>
 					</div>
 					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+						&copy; Jonathan A. Gonzales. Design based on <a href="https://templated.co/">Industrious by TEMPLATED</a> (CC BY 3.0).
 					</div>
 				</div>
 			</footer>

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40">
+  <!-- Photon propagator: sine wave, one period per tile. Drawn past both edges so tiles join seamlessly. -->
+  <path d="M-150 20 Q-112.5 -10 -75 20 T0 20 T75 20 T150 20 T225 20 T300 20" fill="none" stroke="#C8102E" stroke-width="10"/>
+</svg>

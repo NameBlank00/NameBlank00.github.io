@@ -1,11 +1,61 @@
-/* Accent: the red used on the welcome page */
-:root, [data-md-color-scheme="default"], [data-md-color-scheme="slate"] {
+/* ------------------------------------------------------------------
+   Colour schemes (dark is the default; see palette in mkdocs.yml)
+   Dark:  dark-red header, neutral near-black page (no brown tint),
+          soft off-white text and rose links.
+   Light: warm "paper" page, near-black ink, UH-red header and links.
+   ------------------------------------------------------------------ */
+:root, [data-md-color-scheme="default"] {
+  --nb-red: #C8102E;
   --md-primary-fg-color: #C8102E;
   --md-primary-fg-color--light: #e0435c;
   --md-primary-fg-color--dark: #9a0c23;
-  --md-accent-fg-color: #C8102E;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #e0435c;
+
+  --md-default-bg-color: #fcfbf8;
+  --md-default-fg-color: rgba(28, 26, 30, .87);
+  --md-default-fg-color--light: rgba(28, 26, 30, .60);
+  --md-default-fg-color--lighter: rgba(28, 26, 30, .32);
+  --md-default-fg-color--lightest: rgba(28, 26, 30, .10);
+
+  --md-typeset-color: #2b292e;
+  --md-typeset-a-color: #b00d28;
+  --md-code-bg-color: #f3f0ec;
+  --md-code-fg-color: #3a3540;
+
+  --nb-header-line: #9a0c23;
 }
-[data-md-color-scheme="slate"] { --md-typeset-a-color: #ff6b81; }
+
+[data-md-color-scheme="slate"] {
+  --nb-red: #e5566b;
+  --md-hue: 350;
+  --md-primary-fg-color: #6e0b1b;
+  --md-primary-fg-color--light: #8a1426;
+  --md-primary-fg-color--dark: #520814;
+  --md-primary-bg-color: #f3e9ea;
+  --md-primary-bg-color--light: rgba(243, 233, 234, .7);
+  --md-accent-fg-color: #ff8a9b;
+
+  --md-default-bg-color: #141416;
+  --md-default-bg-color--light: #1b1b1e;
+  --md-default-fg-color: rgba(232, 232, 236, .86);
+  --md-default-fg-color--light: rgba(232, 232, 236, .58);
+  --md-default-fg-color--lighter: rgba(232, 232, 236, .30);
+  --md-default-fg-color--lightest: rgba(232, 232, 236, .10);
+
+  --md-typeset-color: #dcdce0;
+  --md-typeset-a-color: #f07686;
+  --md-code-bg-color: #1e1e22;
+  --md-code-fg-color: #e4e4e8;
+  --md-admonition-bg-color: #19191c;
+  --md-footer-bg-color: #3d0710;
+  --md-footer-bg-color--dark: #0e0e10;
+
+  --nb-header-line: #C8102E;
+}
+
+/* Slightly roomier reading */
+.md-typeset { line-height: 1.7; }
 
 /* Horizontal rules drawn as a photon (wavy) propagator */
 .md-typeset hr {
@@ -14,9 +64,113 @@
 }
 
 /* Header underline as a dashed Higgs (scalar) line */
-.md-header { border-bottom: 3px dashed #9a0c23; }
+.md-header { border-bottom: 3px dashed var(--nb-header-line); }
+[data-md-color-scheme="slate"] .md-tabs { background-color: var(--md-primary-fg-color); }
 
 /* "Proof" collapsible */
 .md-typeset .admonition.proof, .md-typeset details.proof { border-color: #888; }
 .md-typeset .proof > summary { background-color: rgba(136,136,136,.1); }
 .md-typeset .proof > summary::before { background-color: #888; }
+
+/* Course-scoped sidebar (overrides/partials/nav.html) */
+.md-nav--primary .nb-back { opacity: .75; font-size: .95em; }
+.md-nav--primary .nb-back:hover { opacity: 1; }
+.md-nav--primary .nb-course { margin-top: 1em; }
+.md-nav--primary .nb-area {
+  display: block; margin: 0 .6rem .2rem;
+  font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.md-nav--primary .nb-course-title { font-weight: 700; font-size: 1.05em; }
+.md-nav--primary .nb-chapters { margin: 0 0 0 .6rem; padding-left: .4rem; border-left: 2px solid var(--md-default-fg-color--lightest); }
+.md-nav--primary .nb-empty { margin: .3rem .6rem; font-size: .9em; font-style: italic; color: var(--md-default-fg-color--light); }
+.md-nav--primary .nb-neighbors {
+  margin-top: 1.2em; padding-top: .8em; border-top: 2px dashed var(--nb-red);
+}
+.md-nav--primary .nb-neighbors small { opacity: .7; }
+.md-nav--primary .nb-neighbors .md-ellipsis { white-space: normal; }
+
+/* Logo (links back to the main site): white so it shows on the red header */
+.md-header .md-logo img, .md-nav__title .md-logo img { filter: brightness(0) invert(1); }
+[data-md-color-scheme] .md-nav__title .md-logo img { filter: none; }
+@media screen and (max-width: 76.234375em) {
+  .md-nav--primary > .md-nav__title .md-logo img { filter: brightness(0) invert(1); }
+}
+
+/* "Theorem" boxes (!!! abstract) in the site red instead of Material's cyan */
+.md-typeset .admonition.abstract, .md-typeset details.abstract { border-color: var(--nb-red); }
+.md-typeset .abstract > .admonition-title, .md-typeset .abstract > summary {
+  background-color: color-mix(in srgb, var(--nb-red) 12%, transparent);
+}
+.md-typeset .abstract > .admonition-title::before, .md-typeset .abstract > summary::before {
+  background-color: var(--nb-red);
+}
+
+/* ---------------- Textbooks page ---------------- */
+.md-typeset .book-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: .8rem 0 1.2rem; }
+.md-typeset .book-filter button {
+  font: inherit; font-size: .68rem; padding: .25rem .7rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background: transparent; color: var(--md-default-fg-color--light);
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.md-typeset .book-filter button:hover { border-color: var(--nb-red); color: var(--md-default-fg-color); }
+.md-typeset .book-filter button[aria-pressed="true"] { background: var(--nb-red); border-color: var(--nb-red); color: #fff; }
+.md-typeset .book-filter .clear { border-style: dashed; }
+
+.md-typeset .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.md-typeset .book {
+  display: flex; gap: .9rem; padding: .8rem; border-radius: .3rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color--light, var(--md-default-bg-color));
+  transition: border-color .15s, transform .15s;
+}
+.md-typeset .book[hidden] { display: none; }
+.md-typeset .book:hover { border-color: var(--nb-red); transform: translateY(-2px); }
+.md-typeset .book img {
+  width: 5.2rem; height: 7.6rem; object-fit: cover; flex: none; border-radius: .15rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+.md-typeset .book-info { min-width: 0; }
+.md-typeset .book h3 { margin: 0 0 .2rem; font-size: .8rem; line-height: 1.35; font-weight: 700; }
+.md-typeset .book-author { margin: 0 0 .5rem; font-size: .7rem; color: var(--md-default-fg-color--light); }
+.md-typeset ul.book-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem; }
+.md-typeset ul.book-tags li {
+  margin: 0; padding: .05rem .45rem; font-size: .58rem; line-height: 1.6; border-radius: 999px;
+  background: color-mix(in srgb, var(--nb-red) 14%, transparent); color: var(--md-default-fg-color);
+}
+.md-typeset .book-empty { font-style: italic; color: var(--md-default-fg-color--light); }
+
+/* Dark mode: titles in blood red (page headings, sidebar section/course titles, book titles) */
+[data-md-color-scheme="slate"] {
+  --nb-title-red: #b3122b;
+}
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-nav__item--section > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .nb-course-title,
+[data-md-color-scheme="slate"] .md-nav--primary .nb-area,
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: var(--nb-title-red);
+}
+[data-md-color-scheme="slate"] .md-typeset h1 { font-weight: 700; }
+[data-md-color-scheme="slate"] .md-typeset h2 { font-weight: 600; }
+
+/* Full sidebar: Mathematics / Physics / Textbooks separated by a dashed (Higgs) line,
+   and Textbooks (a single page, last item) styled like the section titles */
+.md-nav--primary > .md-nav__list > .md-nav__item--section,
+.md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+  margin-top: .9em; padding-top: .9em;
+  border-top: 2px dashed var(--nb-red);
+}
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary > .md-nav__list > .md-nav__item:last-child > .md-nav__link { font-weight: 700; }
+}
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item:last-child > .md-nav__link {
+  color: var(--nb-title-red);
+}
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item:last-child > .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}

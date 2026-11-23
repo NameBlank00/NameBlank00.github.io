@@ -1,0 +1,126 @@
+{#-
+  Course-scoped sidebar.
+
+  nav: Field (Mathematics / Physics) > Area (Mathematical Logic) > Course (Set Theory) > chapters
+
+  - On the notes home and on a field's index page the full tree is shown (Material's default).
+  - Inside a course, the sidebar shows only that course and its chapters, with links to the
+    previous and next course in the same field.
+  An area whose only page is an index (e.g. Number Theory) counts as a course by itself.
+-#}
+{% import "partials/nav-item.html" as item with context %}
+
+{#- Find the active field, area and course -#}
+{% set ns = namespace(field=none, area=none, course=none, courses=[], prev=none, next=none) %}
+{% for f in nav.items %}
+  {% if f.active and f.is_section %}{% set ns.field = f %}{% endif %}
+{% endfor %}
+
+{% if ns.field %}
+  {#- Every course in this field, in nav order -#}
+  {% for a in ns.field.children if a.is_section %}
+    {% set real = a.children | rejectattr("is_index") | list %}
+    {% if real | length == 0 %}
+      {% set ns.courses = ns.courses + [a] %}
+      {% if a.active %}{% set ns.area = a %}{% set ns.course = a %}{% endif %}
+    {% else %}
+      {% for c in real %}
+        {% set ns.courses = ns.courses + [c] %}
+        {% if c.active %}{% set ns.area = a %}{% set ns.course = c %}{% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  {% for c in ns.courses %}
+    {% if c is sameas ns.course %}
+      {% if not loop.first %}{% set ns.prev = loop.previtem %}{% endif %}
+      {% if not loop.last %}{% set ns.next = loop.nextitem %}{% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{%- macro first_url(node) -%}
+  {%- if node.is_section -%}{{ first_url(node.children | first) }}{%- else -%}{{ node.url | url }}{%- endif -%}
+{%- endmacro -%}
+
+<nav class="md-nav md-nav--primary" aria-label="{{ lang.t('nav') }}" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="Back to the main site" class="md-nav__button md-logo" aria-label="Back to the main site" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    {{ config.site_name }}
+  </label>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item">
+      <a href="{{ config.extra.homepage | d('/', true) | url }}" class="md-nav__link nb-back">
+        <span class="md-ellipsis">&larr; Back to main site</span>
+      </a>
+    </li>
+
+    {% if ns.course %}
+      {% set field_index = ns.field.children | first %}
+      <li class="md-nav__item">
+        <a href="{{ first_url(ns.field) }}" class="md-nav__link nb-back">
+          <span class="md-ellipsis">&larr; All {{ ns.field.title }} courses</span>
+        </a>
+      </li>
+
+      <li class="md-nav__item md-nav__item--active nb-course">
+        {% if ns.area is not sameas ns.course %}
+          <span class="nb-area">{{ ns.area.title }}</span>
+        {% else %}
+          <span class="nb-area">{{ ns.field.title }}</span>
+        {% endif %}
+
+        {% if ns.course.is_section %}
+          {% set pages = ns.course.children %}
+          {% set overview = pages | first %}
+          <a href="{{ overview.url | url }}" class="md-nav__link nb-course-title {% if overview.active %}md-nav__link--active{% endif %}">
+            <span class="md-ellipsis">{{ ns.course.title }}</span>
+          </a>
+          {% set chapters = pages[1:] %}
+          {% if chapters %}
+            <ul class="md-nav__list nb-chapters">
+              {% for ch in chapters %}
+                <li class="md-nav__item">
+                  <a href="{{ ch.url | url }}" class="md-nav__link {% if ch.active %}md-nav__link--active{% endif %}">
+                    <span class="md-ellipsis">{{ ch.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="nb-empty">Chapters coming soon.</p>
+          {% endif %}
+        {% else %}
+          <a href="{{ ns.course.url | url }}" class="md-nav__link nb-course-title md-nav__link--active">
+            <span class="md-ellipsis">{{ ns.course.title }}</span>
+          </a>
+          <p class="nb-empty">Chapters coming soon.</p>
+        {% endif %}
+      </li>
+
+      {% if ns.prev or ns.next %}
+        <li class="md-nav__item nb-neighbors">
+          {% if ns.prev %}
+            <a href="{{ first_url(ns.prev) }}" class="md-nav__link">
+              <span class="md-ellipsis"><small>Previous course</small><br>&lsaquo; {{ ns.prev.title }}</span>
+            </a>
+          {% endif %}
+          {% if ns.next %}
+            <a href="{{ first_url(ns.next) }}" class="md-nav__link">
+              <span class="md-ellipsis"><small>Next course</small><br>{{ ns.next.title }} &rsaquo;</span>
+            </a>
+          {% endif %}
+        </li>
+      {% endif %}
+
+    {% else %}
+      {#- Notes home / field index: full tree, as Material renders it -#}
+      {% for nav_item in nav.items %}
+        {% set path = "__nav_" ~ loop.index %}
+        {{ item.render(nav_item, path, 1) }}
+      {% endfor %}
+    {% endif %}
+  </ul>
+</nav>

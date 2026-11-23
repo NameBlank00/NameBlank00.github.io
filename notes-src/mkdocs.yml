@@ -6,19 +6,18 @@ edit_uri: edit/main/notes-src/docs/
 
 theme:
   name: material
-  palette:
-    - media: "(prefers-color-scheme)"
-      toggle: { icon: material/brightness-auto, name: Light mode }
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+  custom_dir: overrides       # course-scoped sidebar (overrides/partials/nav.html)
+  logo: images/logo.svg
+  favicon: images/logo.svg
+  palette:                    # dark by default; the header button switches to light and back
+    - scheme: slate
       primary: custom
       accent: custom
-      toggle: { icon: material/brightness-7, name: Dark mode }
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+      toggle: { icon: material/brightness-4, name: Switch to light mode }
+    - scheme: default
       primary: custom
       accent: custom
-      toggle: { icon: material/brightness-4, name: Automatic mode }
+      toggle: { icon: material/brightness-7, name: Switch to dark mode }
   features:
     - navigation.sections     # Mathematics / Physics as sidebar headings
     - navigation.indexes      # section titles link to their index page
@@ -31,7 +30,7 @@ theme:
     - content.code.copy
 
 extra:
-  homepage: https://nameblank00.github.io/
+  homepage: /                 # logo returns to the main site, not the notes home
 
 markdown_extensions:
   - admonition
@@ -45,13 +44,14 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/textbooks.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Home: index.md
+  - Notes Home: index.md
   - Mathematics:
     - mathematics/index.md
     - Mathematical Logic:
@@ -139,3 +139,4 @@ nav:
       - Cosmology and Astrophysics: physics/experimental-physics/cosmology-and-astrophysics.md
     - Beyond the Standard Model:
       - physics/beyond-the-standard-model/index.md
+  - Textbooks: textbooks.md

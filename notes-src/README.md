@@ -27,3 +27,9 @@ to
 ## Math
 Inline `$...$`, display `$$...$$`. Callouts: `!!! abstract "Theorem"`, `!!! example`,
 and a collapsible proof with `??? proof "Proof"`.
+
+## Sidebar
+Inside a course, the left sidebar shows only that course's chapters plus links to the
+previous/next course (the order in `nav:`). The notes home and the Mathematics/Physics
+index pages show the full tree. This is done in `overrides/partials/nav.html`; the logo
+and "Back to main site" link go to the main page (`extra.homepage`).
