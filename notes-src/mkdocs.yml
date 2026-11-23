@@ -1,0 +1,141 @@
+site_name: NameBlank00 · Notes
+site_url: https://nameblank00.github.io/notes/
+site_author: Jonathan A. Gonzales
+repo_url: https://github.com/nameblank00/nameblank00.github.io
+edit_uri: edit/main/notes-src/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle: { icon: material/brightness-auto, name: Light mode }
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: { icon: material/brightness-7, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: { icon: material/brightness-4, name: Automatic mode }
+  features:
+    - navigation.sections     # Mathematics / Physics as sidebar headings
+    - navigation.indexes      # section titles link to their index page
+    - navigation.footer       # Previous / Next cards
+    - navigation.top
+    - navigation.path
+    - toc.follow              # right-hand "On this page" tracks scrolling
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra:
+  homepage: https://nameblank00.github.io/
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex: { generic: true }
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Mathematics:
+    - mathematics/index.md
+    - Mathematical Logic:
+      - Classical Logic: mathematics/mathematical-logic/classical-logic.md
+      - Set Theory: mathematics/mathematical-logic/set-theory.md
+      - Category Theory: mathematics/mathematical-logic/category-theory.md
+      - Model Theory: mathematics/mathematical-logic/model-theory.md
+      - Proof Theory: mathematics/mathematical-logic/proof-theory.md
+    - Algebra:
+      - Linear Algebra: mathematics/algebra/linear-algebra.md
+      - Abstract Algebra: mathematics/algebra/abstract-algebra.md
+      - Universal Algebra: mathematics/algebra/universal-algebra.md
+      - Representation Theory: mathematics/algebra/representation-theory.md
+    - Analysis:
+      - Real Analysis: mathematics/analysis/real-analysis.md
+      - Complex Analysis: mathematics/analysis/complex-analysis.md
+      - Differential & Integral Equations: mathematics/analysis/differential-and-integral-equations.md
+      - Measure Theory: mathematics/analysis/measure-theory.md
+      - Functional Analysis: mathematics/analysis/functional-analysis.md
+      - Harmonic Analysis: mathematics/analysis/harmonic-analysis.md
+      - Dynamical Systems: mathematics/analysis/dynamical-systems.md
+      - Variational Analysis: mathematics/analysis/variational-analysis.md
+      - Numerical Analysis: mathematics/analysis/numerical-analysis.md
+      - Stochastic Analysis: mathematics/analysis/stochastic-analysis.md
+      - Clifford Analysis: mathematics/analysis/clifford-analysis.md
+    - Topology:
+      - General Topology: mathematics/topology/general-topology.md
+      - Algebraic Topology: mathematics/topology/algebraic-topology.md
+      - Surgery Theory: mathematics/topology/surgery-theory.md
+      - Differential Topology: mathematics/topology/differential-topology.md
+    - Discrete Mathematics:
+      - Combinatorics: mathematics/discrete-mathematics/combinatorics.md
+      - Graph Theory: mathematics/discrete-mathematics/graph-theory.md
+    - Geometry:
+      - Euclidean & Non-Euclidean Geometry: mathematics/geometry/euclidean-and-non-euclidean-geometry.md
+      - Discrete Geometry: mathematics/geometry/discrete-geometry.md
+      - Differential Geometry: mathematics/geometry/differential-geometry.md
+      - Algebraic Geometry: mathematics/geometry/algebraic-geometry.md
+    - Number Theory:
+      - mathematics/number-theory/index.md
+    - Probability:
+      - Probability Theory: mathematics/probability/probability-theory.md
+      - Statistics: mathematics/probability/statistics.md
+      - Stochastic Processes: mathematics/probability/stochastic-processes.md
+  - Physics:
+    - physics/index.md
+    - The Nature of Science:
+      - The Scientific Method: physics/the-nature-of-science/the-scientific-method.md
+      - Dimensional Analysis: physics/the-nature-of-science/dimensional-analysis.md
+      - Measurement Uncertainties: physics/the-nature-of-science/measurement-uncertainties.md
+    - Classical Mechanics:
+      - Newtonian Mechanics:
+        - physics/classical-mechanics/newtonian-mechanics/index.md
+        - physics/classical-mechanics/newtonian-mechanics/01-kinematics.md
+        - physics/classical-mechanics/newtonian-mechanics/02-newtons-laws.md
+        - physics/classical-mechanics/newtonian-mechanics/03-work-and-energy.md
+      - Analytical Mechanics: physics/classical-mechanics/analytical-mechanics.md
+      - Acoustics: physics/classical-mechanics/acoustics.md
+      - Fluid Dynamics: physics/classical-mechanics/fluid-dynamics.md
+      - Continuum Mechanics: physics/classical-mechanics/continuum-mechanics.md
+      - Classical Field Theory: physics/classical-mechanics/classical-field-theory.md
+    - Electromagnetism:
+      - Classical Electrodynamics: physics/electromagnetism/classical-electrodynamics.md
+      - Classical Optics: physics/electromagnetism/classical-optics.md
+      - Quantum Optics: physics/electromagnetism/quantum-optics.md
+    - Condensed Matter Physics:
+      - Quantum Many-Body: physics/condensed-matter-physics/quantum-many-body.md
+      - Plasma Physics: physics/condensed-matter-physics/plasma-physics.md
+    - Thermodynamics:
+      - Classical Thermodynamics: physics/thermodynamics/classical-thermodynamics.md
+      - Statistical Mechanics: physics/thermodynamics/statistical-mechanics.md
+      - Statistical Field Theory: physics/thermodynamics/statistical-field-theory.md
+      - Thermal Field Theory: physics/thermodynamics/thermal-field-theory.md
+      - Non-Equilibrium Thermodynamics: physics/thermodynamics/non-equilibrium-thermodynamics.md
+    - Relativity:
+      - Special Relativity: physics/relativity/special-relativity.md
+      - General Relativity: physics/relativity/general-relativity.md
+    - Quantum Theory:
+      - Quantum Mechanics: physics/quantum-theory/quantum-mechanics.md
+      - Quantum Field Theory: physics/quantum-theory/quantum-field-theory.md
+    - Experimental Physics:
+      - Atomic and Molecular Physics: physics/experimental-physics/atomic-and-molecular-physics.md
+      - Nuclear Physics: physics/experimental-physics/nuclear-physics.md
+      - Particle Physics: physics/experimental-physics/particle-physics.md
+      - Cosmology and Astrophysics: physics/experimental-physics/cosmology-and-astrophysics.md
+    - Beyond the Standard Model:
+      - physics/beyond-the-standard-model/index.md

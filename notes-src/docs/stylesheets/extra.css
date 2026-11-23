@@ -1,0 +1,22 @@
+/* Accent: the red used on the welcome page */
+:root, [data-md-color-scheme="default"], [data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #C8102E;
+  --md-primary-fg-color--light: #e0435c;
+  --md-primary-fg-color--dark: #9a0c23;
+  --md-accent-fg-color: #C8102E;
+}
+[data-md-color-scheme="slate"] { --md-typeset-a-color: #ff6b81; }
+
+/* Horizontal rules drawn as a photon (wavy) propagator */
+.md-typeset hr {
+  border: 0; height: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 6 Q6 0 12 6 T24 6' fill='none' stroke='%23C8102E' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x center;
+}
+
+/* Header underline as a dashed Higgs (scalar) line */
+.md-header { border-bottom: 3px dashed #9a0c23; }
+
+/* "Proof" collapsible */
+.md-typeset .admonition.proof, .md-typeset details.proof { border-color: #888; }
+.md-typeset .proof > summary { background-color: rgba(136,136,136,.1); }
+.md-typeset .proof > summary::before { background-color: #888; }
