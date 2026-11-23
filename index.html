@@ -70,6 +70,18 @@
 			.gluon-b  { --bm: url(images/gluon-mask.svg);       --bw: 102px; --bh: 74px; }
 			.gluon-t  { --tm: url(images/gluon-mask-flip.svg);  --tw: 102px; --th: 74px; }
 
+			/* Section spacing. The template shrinks padding to ~0 on phones, but the particle lines
+			   reach up to 37px into each section, so keep room for them at every width. */
+			@media screen and (max-width: 1280px) {
+				.wrapper, #footer { padding: 5rem 0 4rem 0; }
+			}
+			@media screen and (max-width: 736px) {
+				.wrapper, #footer { padding: 4.5rem 0 3.5rem 0; }
+				#banner { padding: 4rem 1.5rem; }
+				.highlights > * { margin-bottom: 1.5rem; }
+				#cta .inner, #cta-notes .inner { padding: .5rem 0; }
+			}
+
 			.portrait { display: block; margin: 0 auto; width: 100%; max-width: 256px; border-radius: 50%; }
 			.interests { margin-top: 1em; }
 		</style>
