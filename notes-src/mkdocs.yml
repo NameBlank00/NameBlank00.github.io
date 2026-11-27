@@ -51,7 +51,7 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Home: index.md
+  - Notes: index.md
   - Research:
     - research/index.md
     - QCD Thermodynamics:
