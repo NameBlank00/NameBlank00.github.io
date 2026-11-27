@@ -33,3 +33,9 @@ Inside a course, the left sidebar shows only that course's chapters plus links t
 previous/next course (the order in `nav:`). The notes home and the Mathematics/Physics
 index pages show the full tree. This is done in `overrides/partials/nav.html`; the logo
 and "Back to main site" link go to the main page (`extra.homepage`).
+
+## Research notes
+`docs/research/` holds the research notes: one folder per model (HRG, NJL, Quark-Meson, …)
+with an overview `index.md`, and one page per form of the model (e.g. Non-Local NJL). Each
+stub lists its planned topics. In the full sidebar, Research shows as a single "Research Notes"
+line; Mathematics and Physics sit under a "Notes" title.

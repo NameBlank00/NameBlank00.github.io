@@ -174,3 +174,28 @@
 [data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item:last-child > .md-nav__link:hover {
   color: var(--md-accent-fg-color);
 }
+
+/* Full sidebar: "Research Notes" as one titled line, and a "Notes" title over Mathematics/Physics */
+.md-nav--primary > .md-nav__list > .nb-top-link,
+.md-nav--primary > .md-nav__list > .nb-group-title {
+  margin-top: .9em; padding-top: .9em; border-top: 2px dashed var(--nb-red);
+}
+.md-nav--primary > .md-nav__list > .nb-top-link > .md-nav__link { font-weight: 700; }
+.md-nav--primary > .md-nav__list > .nb-group-title > span {
+  display: block; margin: 0 0 .3rem;
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+/* The first field under the "Notes" title needs no extra divider */
+.md-nav--primary > .md-nav__list > .nb-group-title + .md-nav__item--section {
+  margin-top: .2em; padding-top: 0; border-top: 0;
+}
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .nb-top-link > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .nb-group-title > span {
+  color: var(--nb-title-red);
+}
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .nb-top-link > .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}
+/* Area name above a research course links to the area overview */
+.md-nav--primary a.nb-area:hover { color: var(--md-accent-fg-color); }

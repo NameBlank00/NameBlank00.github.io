@@ -1,9 +1,18 @@
-# Research Notes
+# Notes
 
-Notes on mathematics and physics, organized like courses: each field contains
-courses, and each course is a sequence of chapters.
+My research notes, plus notes on mathematics and physics organized like courses:
+each field contains courses, and each course is a sequence of chapters.
 
 <div class="grid cards" markdown>
+
+-   **Research Notes**
+
+    ---
+
+    QCD thermodynamics and the models used to study it: hadron resonance gas,
+    NJL and quark-meson models.
+
+    [Browse research notes](research/index.md)
 
 -   **Mathematics**
 
@@ -20,5 +29,13 @@ courses, and each course is a sequence of chapters.
     Classical mechanics through quantum field theory, relativity and beyond.
 
     [Browse physics](physics/index.md)
+
+-   **Textbooks**
+
+    ---
+
+    The books I use and recommend, with topic filters.
+
+    [Browse textbooks](textbooks.md)
 
 </div>

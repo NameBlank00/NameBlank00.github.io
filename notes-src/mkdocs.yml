@@ -51,7 +51,33 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Notes Home: index.md
+  - Home: index.md
+  - Research:
+    - research/index.md
+    - QCD Thermodynamics:
+      - research/qcd-thermodynamics/index.md
+      - The QCD Phase Diagram: research/qcd-thermodynamics/phase-diagram.md
+      - Lattice QCD Results: research/qcd-thermodynamics/lattice-qcd.md
+      - Fluctuations of Conserved Charges: research/qcd-thermodynamics/fluctuations.md
+    - Hadron Resonance Gas:
+      - research/hrg/index.md
+      - Ideal HRG: research/hrg/ideal-hrg.md
+      - Resonance Decays: research/hrg/resonance-decays.md
+      - Excluded-Volume HRG: research/hrg/excluded-volume-hrg.md
+      - Van der Waals HRG: research/hrg/van-der-waals-hrg.md
+    - Nambu–Jona-Lasinio Model:
+      - research/njl/index.md
+      - NJL Model: research/njl/njl-model.md
+      - Polyakov-loop NJL: research/njl/pnjl.md
+      - Non-Local NJL: research/njl/non-local-njl.md
+      - Magnetic Field NJL: research/njl/magnetic-field-njl.md
+    - Quark-Meson Model:
+      - research/quark-meson/index.md
+      - Quark-Meson Model: research/quark-meson/quark-meson-model.md
+      - Polyakov Quark-Meson Model: research/quark-meson/pqm.md
+      - Functional RG Quark-Meson: research/quark-meson/frg-quark-meson.md
+    - Holographic Models:
+      - research/holographic-models/index.md
   - Mathematics:
     - mathematics/index.md
     - Mathematical Logic:

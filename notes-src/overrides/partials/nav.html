@@ -3,7 +3,9 @@
 
   nav: Field (Mathematics / Physics) > Area (Mathematical Logic) > Course (Set Theory) > chapters
 
-  - On the notes home and on a field's index page the full tree is shown (Material's default).
+  - On the notes home and on a field's index page the full tree is shown. In it, Research is a
+    single "Research Notes" line, and Mathematics / Physics sit under a "Notes" title.
+  - On an area's own overview page (e.g. research/njl/index.md) only that area's courses are shown.
   - Inside a course, the sidebar shows only that course and its chapters, with links to the
     previous and next course in the same field.
   An area whose only page is an index (e.g. Number Theory) counts as a course by itself.
@@ -11,7 +13,7 @@
 {% import "partials/nav-item.html" as item with context %}
 
 {#- Find the active field, area and course -#}
-{% set ns = namespace(field=none, area=none, course=none, courses=[], prev=none, next=none) %}
+{% set ns = namespace(field=none, area=none, course=none, area_page=none, courses=[], prev=none, next=none) %}
 {% for f in nav.items %}
   {% if f.active and f.is_section %}{% set ns.field = f %}{% endif %}
 {% endfor %}
@@ -28,6 +30,9 @@
         {% set ns.courses = ns.courses + [c] %}
         {% if c.active %}{% set ns.area = a %}{% set ns.course = c %}{% endif %}
       {% endfor %}
+      {#- An area with its own overview page, viewed directly -#}
+      {% set ov = a.children | selectattr("is_index") | first %}
+      {% if a.active and not ns.course and ov and ov.active %}{% set ns.area_page = a %}{% endif %}
     {% endif %}
   {% endfor %}
   {% for c in ns.courses %}
@@ -61,13 +66,18 @@
       {% set field_index = ns.field.children | first %}
       <li class="md-nav__item">
         <a href="{{ first_url(ns.field) }}" class="md-nav__link nb-back">
-          <span class="md-ellipsis">&larr; All {{ ns.field.title }} courses</span>
+          <span class="md-ellipsis">&larr; All {{ "Research Notes" if ns.field.title == "Research" else ns.field.title ~ " courses" }}</span>
         </a>
       </li>
 
       <li class="md-nav__item md-nav__item--active nb-course">
         {% if ns.area is not sameas ns.course %}
-          <span class="nb-area">{{ ns.area.title }}</span>
+          {% set ov = ns.area.children | selectattr("is_index") | first %}
+          {% if ov %}
+            <a class="nb-area" href="{{ ov.url | url }}">{{ ns.area.title }}</a>
+          {% else %}
+            <span class="nb-area">{{ ns.area.title }}</span>
+          {% endif %}
         {% else %}
           <span class="nb-area">{{ ns.field.title }}</span>
         {% endif %}
@@ -115,11 +125,48 @@
         </li>
       {% endif %}
 
+    {% elif ns.area_page %}
+      {#- An area's overview page: just that area's courses -#}
+      <li class="md-nav__item">
+        <a href="{{ first_url(ns.field) }}" class="md-nav__link nb-back">
+          <span class="md-ellipsis">&larr; All {{ "Research Notes" if ns.field.title == "Research" else ns.field.title ~ " courses" }}</span>
+        </a>
+      </li>
+      <li class="md-nav__item md-nav__item--active nb-course">
+        <span class="nb-area">{{ ns.field.title }}</span>
+        <a href="{{ first_url(ns.area_page) }}" class="md-nav__link nb-course-title md-nav__link--active">
+          <span class="md-ellipsis">{{ ns.area_page.title }}</span>
+        </a>
+        <ul class="md-nav__list nb-chapters">
+          {% for c in ns.area_page.children | rejectattr("is_index") %}
+            <li class="md-nav__item">
+              <a href="{{ first_url(c) }}" class="md-nav__link">
+                <span class="md-ellipsis">{{ c.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+
     {% else %}
-      {#- Notes home / field index: full tree, as Material renders it -#}
+      {#- Notes home / field index: full tree. Research is one line; the coursework fields
+          (Mathematics, Physics) sit under a "Notes" title. -#}
+      {% set g = namespace(titled=false) %}
       {% for nav_item in nav.items %}
         {% set path = "__nav_" ~ loop.index %}
-        {{ item.render(nav_item, path, 1) }}
+        {% if nav_item.is_section and nav_item.title == "Research" %}
+          <li class="md-nav__item nb-top-link{% if nav_item.active %} md-nav__item--active{% endif %}">
+            <a href="{{ first_url(nav_item) }}" class="md-nav__link{% if nav_item.active %} md-nav__link--active{% endif %}">
+              <span class="md-ellipsis">Research Notes</span>
+            </a>
+          </li>
+        {% else %}
+          {% if nav_item.is_section and not g.titled %}
+            {% set g.titled = true %}
+            <li class="md-nav__item nb-group-title"><span class="md-ellipsis">Notes</span></li>
+          {% endif %}
+          {{ item.render(nav_item, path, 1) }}
+        {% endif %}
       {% endfor %}
     {% endif %}
   </ul>
