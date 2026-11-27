@@ -4,7 +4,7 @@
   nav: Field (Mathematics / Physics) > Area (Mathematical Logic) > Course (Set Theory) > chapters
 
   - On the notes home and on a field's index page the full tree is shown. In it, Research is a
-    single "Research Notes" line, and Mathematics / Physics sit under a "Notes" title.
+    single "Research Notes" line, and Mathematics / Physics sit under a "Course Notes" title.
   - On an area's own overview page (e.g. research/njl/index.md) only that area's courses are shown.
   - Inside a course, the sidebar shows only that course and its chapters, with links to the
     previous and next course in the same field.
@@ -150,7 +150,7 @@
 
     {% else %}
       {#- Notes home / field index: full tree. Research is one line; the coursework fields
-          (Mathematics, Physics) sit under a "Notes" title. -#}
+          (Mathematics, Physics) sit under a "Course Notes" title. -#}
       {% set g = namespace(titled=false) %}
       {% for nav_item in nav.items %}
         {% set path = "__nav_" ~ loop.index %}
@@ -163,7 +163,7 @@
         {% else %}
           {% if nav_item.is_section and not g.titled %}
             {% set g.titled = true %}
-            <li class="md-nav__item nb-group-title"><span class="md-ellipsis">Notes</span></li>
+            <li class="md-nav__item nb-group-title"><span class="md-ellipsis">Course Notes</span></li>
           {% endif %}
           {{ item.render(nav_item, path, 1) }}
         {% endif %}
